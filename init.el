@@ -1,10 +1,8 @@
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
-(custom-set-variables
- '(inhibit-startup-screen t)
- '(initial-buffer-choice nil))
+(require 'init-startup)
+(require 'init-theme)
+(require 'init-evil)
 
-(setq custom-file "~/.emacs.d/lisp/init-theme.el")
+(setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
