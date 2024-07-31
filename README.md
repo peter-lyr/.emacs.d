@@ -4,3 +4,4 @@ https://emacs.stackexchange.com/questions/47771/should-i-use-require-or-load-whe
 https://www.emacswiki.org/emacs/LineNumbers
 https://www.orgroam.com/manual.html#Installation
 https://emacs.stackexchange.com/questions/20167/how-do-i-create-a-borderless-frame
+https://emacs.stackexchange.com/questions/22663/how-can-transparency-be-toggled
