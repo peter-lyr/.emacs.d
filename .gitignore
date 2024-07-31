@@ -4,3 +4,4 @@
 !lisp
 !lisp/*.el
 !init.el
+!README.md

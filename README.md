@@ -3,3 +3,4 @@ https://emacs.stackexchange.com/questions/59694/cant-get-rid-of-scratch-buffer-a
 https://emacs.stackexchange.com/questions/47771/should-i-use-require-or-load-when-writing-my-own-configuration
 https://www.emacswiki.org/emacs/LineNumbers
 https://www.orgroam.com/manual.html#Installation
+https://emacs.stackexchange.com/questions/20167/how-do-i-create-a-borderless-frame
