@@ -4,7 +4,7 @@
 
 (use-package org-roam
    :ensure t
-   :after org
+   ; :after org
    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
    :config (org-roam-setup)
    :custom (org-roam-directory (concat org-directory "roam/")) ; 设置 org-roam 目录
