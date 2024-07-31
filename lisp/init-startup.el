@@ -31,4 +31,11 @@
 ; 不要备份
 (setq make-backup-files nil)
 
+; auto-save-mode好像不行，auto-save-visited-mode可以
+; (auto-save-mode)
+; (setq auto-save-interval 1)
+(auto-save-visited-mode)
+; auto-save-visited-interval好像改变不了
+; (setq auto-save-visited-interval 1)
+
 (provide 'init-startup)
