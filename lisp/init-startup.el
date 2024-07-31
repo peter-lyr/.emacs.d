@@ -29,6 +29,6 @@
 ; (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ; 不要备份
-; (setq make-backup-files nil)
+(setq make-backup-files nil)
 
 (provide 'init-startup)
