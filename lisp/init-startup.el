@@ -41,4 +41,13 @@
 ; 当另一程序修改了文件时，让Emacs及时刷新Buffer
 (global-auto-revert-mode t)
 
+; 在Mode line上显示列号
+(column-number-mode t)
+
+; 自动补全括号
+(electric-pair-mode t)
+
+; 编程模式下，光标在括号上时高亮另一个括号
+(add-hook 'prog-mode-hook #'show-paren-mode)
+
 (provide 'init-startup)
