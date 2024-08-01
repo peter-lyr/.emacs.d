@@ -9,3 +9,10 @@ https://github.com/purcell/emacs.d/blob/master/init.el
 
 if和when语句
 https://blog.csdn.net/csfreebird/article/details/7477396
+
+let语句
+(let VARLIST BODY)
+先赋值，在跑body，跑完body后，刚刚赋值的变量失效
+val1,val2,...是一下整个括号内的局部变量
+(let ((val1 VAL1)(val2 VAL2)...)
+  (...))
