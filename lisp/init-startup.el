@@ -50,4 +50,15 @@
 ; 编程模式下，光标在括号上时高亮另一个括号
 (add-hook 'prog-mode-hook #'show-paren-mode)
 
+; https://github.com/iqbalansari/restart-emacs
+(use-package restart-emacs
+  :ensure t)
+
+(defun my-restart-emacs()
+  (interactive)
+  (restart-emacs-start-new-emacs)
+  (save-buffers-kill-terminal))
+
+(global-set-key (kbd "C-x C-r") 'my-restart-emacs)
+
 (provide 'init-startup)
