@@ -38,4 +38,7 @@
 ; auto-save-visited-interval好像改变不了
 ; (setq auto-save-visited-interval 1)
 
+; 当另一程序修改了文件时，让Emacs及时刷新Buffer
+(global-auto-revert-mode t)
+
 (provide 'init-startup)
