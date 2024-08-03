@@ -34,3 +34,6 @@
 ; 关闭Emacs的欢迎界面
 (custom-set-variables
   '(inhibit-startup-screen t))
+
+; 显示行号
+(global-display-line-numbers-mode 1)
