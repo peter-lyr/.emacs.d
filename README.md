@@ -16,3 +16,8 @@ let语句
 val1,val2,...是一下整个括号内的局部变量
 (let ((val1 VAL1)(val2 VAL2)...)
   (...))
+
+Windows HONE
+在cmd输入regedit后回车就会打开注册表了
+找到HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs（如果没有则手动添加项），在此项下添加字符串值，名称为HOME， 值为D:\emacs.d。这样做的目的是让D:\emacs.d成为Emacs的home路径
+有效
