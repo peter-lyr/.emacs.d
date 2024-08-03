@@ -26,7 +26,7 @@
 (set-frame-parameter nil 'undecorated t)
 
 ; 背景透明
-(set-frame-parameter nil 'alpha '(85 . 50))
+(set-frame-parameter nil 'alpha '(92 . 78))
 
 ; 让emacs启动就全屏
 (add-hook 'window-setup-hook #'toggle-frame-maximized t)
