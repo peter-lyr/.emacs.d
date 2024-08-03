@@ -11,3 +11,11 @@
 (use-package evil
   :ensure t
   :config (evil-mode 1))
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(set-frame-parameter nil 'undecorated t)
+
+(custom-set-variables
+ '(inhibit-startup-screen t))
