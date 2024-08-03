@@ -21,3 +21,4 @@ Windows HONE
 在cmd输入regedit后回车就会打开注册表了
 找到HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs（如果没有则手动添加项），在此项下添加字符串值，名称为HOME， 值为D:\emacs.d。这样做的目的是让D:\emacs.d成为Emacs的home路径
 有效
+https://emacs-china.org/t/topic/2600
