@@ -12,6 +12,10 @@
   :ensure t
   :config (evil-mode 1))
 
+(use-package dracula-theme
+  :ensure t
+  :config (load-theme 'dracula t))
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
