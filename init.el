@@ -20,7 +20,10 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (set-frame-parameter nil 'undecorated t)
-(set-frame-parameter nil 'alpha '(85 . 50))
+; (set-frame-parameter nil 'alpha '(85 . 50))
+
+; 让emacs启动就全屏
+(add-hook 'window-setup-hook #'toggle-frame-maximized t)
 
 (custom-set-variables
  '(inhibit-startup-screen t))
