@@ -59,10 +59,6 @@
 ; #+STARTUP: logdone
 (setq org-log-done 'time)
 
-; 上电打开org文件
-; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
-(find-file "~/depei/repos/org/test.org")
-
 ; 关于org-agenda-files不能奏效的问题
 ; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
@@ -74,3 +70,7 @@
 ; (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 ; (global-set-key (kbd "C-c c") #'org-capture)
+
+; 上电打开org文件
+; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
+(find-file "~/depei/repos/org/test.org")
