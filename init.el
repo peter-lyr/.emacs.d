@@ -66,3 +66,5 @@
 ; 关于org-agenda-files不能奏效的问题
 ; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
+
+(setq org-M-RET-may-split-line nil)
