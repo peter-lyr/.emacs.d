@@ -62,3 +62,7 @@
 ; 上电打开org文件
 ; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
 (find-file "~/depei/repos/org/test.org")
+
+; 关于org-agenda-files不能奏效的问题
+; https://emacs-china.org/t/org-agenda-files/25932
+(setq org-agenda-files (list "~/depei/repos/org/"))
