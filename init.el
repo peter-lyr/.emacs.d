@@ -69,3 +69,8 @@
 
 ; M-RET不要切割当前行
 (setq org-M-RET-may-split-line nil)
+
+; 几个常用按键映射
+; (global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+; (global-set-key (kbd "C-c c") #'org-capture)
