@@ -37,3 +37,6 @@
 
 ; 显示行号
 (global-display-line-numbers-mode 1)
+
+; 当另一程序修改了文件时，让Emacs及时刷新Buffer
+(global-auto-revert-mode t)
