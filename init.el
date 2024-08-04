@@ -60,4 +60,5 @@
 (setq org-log-done 'time)
 
 ; 上电打开org文件
+; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
 (find-file "~/depei/repos/org/test.org")
