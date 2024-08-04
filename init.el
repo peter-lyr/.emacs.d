@@ -40,3 +40,21 @@
 
 ; 当另一程序修改了文件时，让Emacs及时刷新Buffer
 (global-auto-revert-mode t)
+
+; Org文件以指定的目录深度打开 startup:show2levels
+; #+STARTUP: overview
+; https://emacs-china.org/t/org-startup-show2levels/16499
+(setq org-startup-folded 'show2levels)
+
+; #+STARTUP: indent
+; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
+(setq org-startup-indented t)
+
+; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
+; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
+(setq org-todo-keywords
+      '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
+
+; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
+; #+STARTUP: logdone
+(setq org-log-done 'time)
