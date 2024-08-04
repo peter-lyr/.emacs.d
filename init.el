@@ -58,3 +58,6 @@
 ; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
 ; #+STARTUP: logdone
 (setq org-log-done 'time)
+
+; 上电打开org文件
+(find-file "~/depei/repos/org/test.org")
