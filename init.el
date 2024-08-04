@@ -67,4 +67,5 @@
 ; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
 
+; M-RET不要切割当前行
 (setq org-M-RET-may-split-line nil)
