@@ -93,3 +93,7 @@
 ; C-u C-c . vs C-c .
 ; https://emacs.stackexchange.com/questions/71304/what-is-the-difference-between-c-u-c-c-c-l-and-c-c-c-l
 ; https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html
+
+; emacs 改变光标形状
+; http://blog.chinaunix.net/uid-20609878-id-1915848.html
+(setq-default cursor-type 'bar)
