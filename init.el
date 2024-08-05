@@ -79,3 +79,8 @@
 ; Emacs: Real Automatic Save File
 (auto-save-visited-mode 1)
 (setq auto-save-visited-interval 30)
+; Auto Save File When Switching Out of Emacs
+(defun xah-save-all-unsaved ()
+  (interactive)
+  (save-some-buffers t ))
+(setq after-focus-change-function 'xah-save-all-unsaved)
