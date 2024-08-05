@@ -7,10 +7,10 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-; vi模式
-(use-package evil
-             :ensure t
-             :config (evil-mode 1))
+; ; vi模式
+; (use-package evil
+;              :ensure t
+;              :config (evil-mode 1))
 
 ; 主题
 (use-package dracula-theme
