@@ -84,3 +84,12 @@
   (interactive)
   (save-some-buffers t ))
 (setq after-focus-change-function 'xah-save-all-unsaved)
+
+; https://emacs-china.org/t/org-mode/2195/4
+; C-u C-c . 当前时间
+; C-c .00:00 指定时间为 00:00
+; C-c .+1d 当前日期加 1
+
+; C-u C-c . vs C-c .
+; https://emacs.stackexchange.com/questions/71304/what-is-the-difference-between-c-u-c-c-c-l-and-c-c-c-l
+; https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html
