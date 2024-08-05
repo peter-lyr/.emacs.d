@@ -74,3 +74,8 @@
 ; 上电打开org文件
 ; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
 (find-file "~/depei/repos/org/test.org")
+
+; http://xahlee.info/emacs/emacs/emacs_auto_save.html
+; Emacs: Real Automatic Save File
+(auto-save-visited-mode 1)
+(setq auto-save-visited-interval 30)
