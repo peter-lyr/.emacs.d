@@ -111,9 +111,13 @@
 ;; M-RET不要切割当前行
 (setq org-M-RET-may-split-line nil)
 
-;; 上电打开org文件
-;; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
-(find-file "~/depei/repos/org/init.org")
+;; ;; 上电打开org文件
+;; ;; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
+;; (find-file "~/depei/repos/org/init.org")
+(defun open-init-org()
+  (interactive)
+  (find-file "~/depei/repos/org/init.org"))
+(global-set-key (kbd "C-x C-<return>") 'open-init-org)
 
 ;; http://xahlee.info/emacs/emacs/emacs_auto_save.html
 ;; Emacs: Real Automatic Save File
