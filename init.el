@@ -9,17 +9,17 @@
 ;; 是否使能vi模式
 (if nil
   ;; vi模式
-  (use-package evil
-               :ensure t
-               :config (evil-mode 1))
+  ;; (use-package evil
+  ;;              :ensure t
+  ;;              :config (evil-mode 1))
   ;; emacs 改变光标形状
   ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
   (setq-default cursor-type 'bar))
 
 ;; 主题
-(use-package dracula-theme
-             :ensure t
-             :config (load-theme 'dracula t))
+;; (use-package dracula-theme
+;;              :ensure t
+;;              :config (load-theme 'dracula t))
 
 ;; 无工具栏，菜单栏和滚动栏
 (tool-bar-mode -1)
@@ -73,29 +73,29 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 
 ;; org-roam
-(use-package org-roam
-             :ensure t
-             :custom
-             (org-roam-directory (file-truename "~/depei/repos/org/"))
-             :bind (("C-c n l" . org-roam-buffer-toggle)
-                    ("C-c n f" . org-roam-node-find)
-                    ("C-c n i" . org-roam-node-insert)
-                    )
-             :config
-             (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
-             (setq org-roam-capture-templates
-                   '(("d" "default" plain "%?"
-                      ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
-                      :target (file+head
-                                "${slug}.org"
-                                "#+title: ${title}
-#+created: %<%Y/%m/%d %H:%M:%S>"
-                                )
-                      :unnarrowed t)))
-             (org-roam-db-autosync-mode)
-             (require 'org-roam-protocol))
+;; (use-package org-roam
+;;              :ensure t
+;;              :custom
+;;              (org-roam-directory (file-truename "~/depei/repos/org/"))
+;;              :bind (("C-c n l" . org-roam-buffer-toggle)
+;;                     ("C-c n f" . org-roam-node-find)
+;;                     ("C-c n i" . org-roam-node-insert)
+;;                     )
+;;              :config
+;;              (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
+;;              (setq org-roam-capture-templates
+;;                    '(("d" "default" plain "%?"
+;;                       ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+;;                       :target (file+head
+;;                                 "${slug}.org"
+;;                                 "#+title: ${title}
+;; #+created: %<%Y/%m/%d %H:%M:%S>"
+;;                                 )
+;;                       :unnarrowed t)))
+;;              (org-roam-db-autosync-mode)
+;;              (require 'org-roam-protocol))
 
-;; agenda默认按列展示
+;;; agenda默认按列展示
 (setq org-agenda-view-columns-initially t)
 ;; https://orgmode.org/manual/Column-attributes.html
 (setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %1PRIORITY %TAGS %40ITEM %CATEGORY")
