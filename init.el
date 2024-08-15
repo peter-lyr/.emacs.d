@@ -1,14 +1,13 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("gnu" . "https://mirrors.163.com/elpa/gnu/")
-             '("melpa" . "https://mirrors.163.com/elpa/melpa/")
-             )
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
 
 ;; 是否使能vi模式
-(if 1
+(if nil
   ;; vi模式
   (use-package evil
                :ensure t
@@ -57,8 +56,50 @@
 
 ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
 ;; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
-(setq org-todo-keywords
-      '((sequence "TODO" "SCH" "WAIT" "|" "DONE" "CANCELLED")))
+(setq org-todo-keywords '((sequence
+                            "GATHER(g@)"
+                            "NEXT(n@)"
+                            "LATER(l@)"
+                            "WAIT(w@)"
+                            "MAYBE(m@)"
+                            "|"
+                            "DONE(d@)"
+                            "CANCELLED(c@)"
+                            "ARCHIVE(a@)"
+                            )))
+
+;; 几个常用按键映射
+(global-set-key (kbd "C-c l") #'org-store-link)
+;; (global-set-key (kbd "C-c C-l") #'org-insert-link) ; 默认的
+(global-set-key (kbd "C-c a") #'org-agenda)
+
+;; org-roam
+(use-package org-roam
+             :ensure t
+             :custom
+             (org-roam-directory (file-truename "~/depei/repos/org/"))
+             :bind (("C-c n l" . org-roam-buffer-toggle)
+                    ("C-c n f" . org-roam-node-find)
+                    ("C-c n i" . org-roam-node-insert)
+                    )
+             :config
+             (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
+             (setq org-roam-capture-templates
+                   '(("d" "default" plain "%?"
+                      ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+                      :target (file+head
+                                "${slug}.org"
+                                "#+title: ${title}
+#+created: %<%Y/%m/%d %H:%M:%S>"
+                                )
+                      :unnarrowed t)))
+             (org-roam-db-autosync-mode)
+             (require 'org-roam-protocol))
+
+;; agenda默认按列展示
+(setq org-agenda-view-columns-initially t)
+;; https://orgmode.org/manual/Column-attributes.html
+(setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %1PRIORITY %TAGS %40ITEM %CATEGORY")
 
 ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
 ;; #+STARTUP: logdone
@@ -71,14 +112,9 @@
 ;; M-RET不要切割当前行
 (setq org-M-RET-may-split-line nil)
 
-;; 几个常用按键映射
-;; (global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-;; (global-set-key (kbd "C-c c") #'org-capture)
-
 ;; 上电打开org文件
 ;; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
-(find-file "~/depei/repos/org/test.org")
+(find-file "~/depei/repos/org/init.org")
 
 ;; http://xahlee.info/emacs/emacs/emacs_auto_save.html
 ;; Emacs: Real Automatic Save File
