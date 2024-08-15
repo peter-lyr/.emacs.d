@@ -134,3 +134,6 @@
 ;; C-u C-c . vs C-c .
 ;; https://emacs.stackexchange.com/questions/71304/what-is-the-difference-between-c-u-c-c-c-l-and-c-c-c-l
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html
+
+;; Emacs禁止自动产生备份文件
+(setq make-backup-files nil)
