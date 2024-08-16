@@ -144,6 +144,13 @@
 ;; Emacs禁止自动产生备份文件
 (setq make-backup-files nil)
 
+;; DONE 表格对齐，增加上电时长
+(use-package valign
+             :ensure t
+             :config
+             (setq valign-fancy-bar t)
+             (add-hook 'org-mode-hook #'valign-mode))
+
 ;; 编码系统
 ;; 解决每次退出都要提示一次，要按好多次才能退出的问题
 (set-default-coding-systems 'utf-8)
