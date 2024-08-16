@@ -28,7 +28,11 @@
 ;; (set-frame-parameter nil 'alpha '(100 . 78))
 
 ;; 让emacs启动就全屏
-(add-hook 'window-setup-hook #'toggle-frame-maximized t)
+;; (add-hook 'window-setup-hook #'toggle-frame-maximized t)
+
+;; 50行160列
+(set-frame-height (selected-frame) 50)
+(set-frame-width (selected-frame) 160)
 
 ;; 关闭Emacs的欢迎界面
 (setq inhibit-startup-screen t)
