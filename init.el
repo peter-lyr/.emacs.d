@@ -91,6 +91,10 @@
              (org-roam-db-autosync-mode)
              (require 'org-roam-protocol))
 
+;; avy
+(use-package avy
+             :bind (("C-c j" . avy-goto-char)))
+
 ;;; agenda默认按列展示
 (setq org-agenda-view-columns-initially t)
 ;; https://orgmode.org/manual/Column-attributes.html
