@@ -1,17 +1,20 @@
-;; 是否使能vi模式
-(if nil
-  ;; vi模式
-  ;; (use-package evil
-  ;;              :ensure t
-  ;;              :config (evil-mode 1))
-  ;; emacs 改变光标形状
-  ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
-  (setq-default cursor-type 'bar))
+;; ;; 是否使能vi模式
+;; (if nil
+;;   vi模式
+;;   (use-package evil
+;;                :ensure t
+;;                :config (evil-mode 1))
+;;   emacs 改变光标形状
+;;   http://blog.chinaunix.net/uid-20609878-id-1915848.html
+;;   (setq-default cursor-type 'bar))
 
-;; 主题
-;; (use-package dracula-theme
-;;              :ensure t
-;;              :config (load-theme 'dracula t))
+;; 光标形状
+(setq-default cursor-type 'bar)
+
+;; 主题还是要有的
+(use-package dracula-theme
+             :ensure t
+             :config (load-theme 'dracula t))
 
 ;; 无工具栏，菜单栏和滚动栏
 (tool-bar-mode -1)
@@ -120,6 +123,9 @@
   (interactive)
   (save-some-buffers t ))
 (setq after-focus-change-function 'xah-save-all-unsaved)
+
+;; 设置字体
+(set-face-attribute 'default nil :font "Hack NFM")
 
 ;; https://emacs-china.org/t/org-mode/2195/4
 ;; C-u C-c . 当前时间
