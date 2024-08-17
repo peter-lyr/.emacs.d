@@ -64,6 +64,9 @@
   (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
   (evil-leader/set-key "nf" 'org-roam-node-find)
   (evil-leader/set-key "ni" 'org-roam-node-insert)
+  ;; 窗口复制
+  (evil-leader/set-key "ws" 'evil-window-split)
+  (evil-leader/set-key "wv" 'evil-window-vsplit)
   ;; 窗口跳转
   (evil-leader/set-key "wl" 'evil-window-right)
   (evil-leader/set-key "wh" 'evil-window-left)
