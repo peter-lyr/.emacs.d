@@ -59,6 +59,11 @@
   (use-package avy :bind (("C-c j" . avy-goto-char)))
   )
 
+(use-package zoom-window
+             :config
+             (setq zoom-window-mode-line-color nil)
+             )
+
 (defun evil-leader-set-key ()
   (interactive)
   ;; 重新加载init.el
@@ -81,7 +86,11 @@
   (evil-leader/set-key "wh" 'evil-window-left)
   (evil-leader/set-key "wk" 'evil-window-up)
   (evil-leader/set-key "wj" 'evil-window-down)
+  ;; 窗口关闭
   (evil-leader/set-key "wd" 'evil-quit)
+  ;; 窗口最大化和一样大
+  (evil-leader/set-key "wm" 'zoom-window-zoom)
+  (evil-leader/set-key "we" 'balance-windows)
   ;; 回车键怎么能少得了呢
   ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
   (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
