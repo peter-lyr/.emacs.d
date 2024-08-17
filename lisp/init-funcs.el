@@ -20,4 +20,5 @@
   "上电打开init.org文件"
   (interactive)
   (find-file "~/depei/repos/org/init.org"))
+
 (provide 'init-funcs)

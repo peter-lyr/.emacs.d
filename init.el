@@ -49,6 +49,7 @@
   ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
   (setq-default cursor-type 'bar))
 
+(require 'init-funcs) ; 所有定义的函数放这里
 (require 'init-org) ; orgmode配置
 (require 'init-startup) ; 一些系统级配置
 (require 'init-test) ; 测试或易忘的配置
