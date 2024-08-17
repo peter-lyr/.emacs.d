@@ -39,10 +39,24 @@
   (use-package avy :bind (("C-c j" . avy-goto-char)))
   )
 
+(defun evil-leader-set-key ()
+  (interactive)
+  (evil-leader/set-key "f;" 'avy-goto-char)
+  (evil-leader/set-key "fj" 'dired-jump)
+  (evil-leader/set-key "fo" 'open-init-org)
+  (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
+  (evil-leader/set-key "nf" 'org-roam-node-find)
+  (evil-leader/set-key "ni" 'org-roam-node-insert)
+  (evil-leader/set-key "wl" 'evil-window-right)
+  (evil-leader/set-key "wh" 'evil-window-left)
+  (evil-leader/set-key "wk" 'evil-window-up)
+  (evil-leader/set-key "wj" 'evil-window-down)
+  )
+
 ;; 统一在这里设置按键映射
 (if use-evil
-  (progn
-    (evil-leader/set-key "f;" 'avy-goto-char)
+  (evil-leader-set-key)
+  )
     (evil-leader/set-key "fj" 'dired-jump)
     (evil-leader/set-key "fo" 'open-init-org)
     (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
