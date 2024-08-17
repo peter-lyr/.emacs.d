@@ -61,4 +61,15 @@
         (file . find-file)
         (wl . wl-other-frame)))
 
+;; emacs重启
+;; https://github.com/iqbalansari/restart-emacs
+(use-package restart-emacs
+  :ensure t)
+
+;; emacs重启
+(defun my-restart-emacs()
+  (interactive)
+  (restart-emacs-start-new-emacs)
+  (save-buffers-kill-terminal))
+
 (provide 'init-startup)

@@ -75,8 +75,9 @@
              )
 
 ;; which-key的prefix定义
-(which-key-add-key-based-replacements "SPC f" "find-file")
+(which-key-add-key-based-replacements "SPC f" "find-file/frame")
 (which-key-add-key-based-replacements "SPC f c" "find-file config")
+(which-key-add-key-based-replacements "SPC f r" "frame")
 (which-key-add-key-based-replacements "SPC w" "window")
 (which-key-add-key-based-replacements "SPC n" "note")
 
@@ -105,6 +106,9 @@
   (evil-leader/set-key "wj" 'evil-window-down)
   ;; 窗口关闭
   (evil-leader/set-key "wd" 'evil-quit)
+  ;; emacs关闭或重启
+  (evil-leader/set-key "frr" 'my-restart-emacs)
+  (evil-leader/set-key "frq" 'save-buffers-kill-terminal)
   ;; 窗口最大化和一样大
   (evil-leader/set-key "wm" 'zoom-window-zoom)
   (evil-leader/set-key "we" 'balance-windows)
