@@ -27,6 +27,15 @@
                  :config
                  (global-evil-leader-mode)
                  (evil-leader/set-leader "SPC"))
+    (use-package evil-org
+                 :ensure t
+                 :after org
+                 :hook (org-mode . 'evil-org-mode)
+                 :config
+                 (evil-org-set-key-theme)
+                 (require 'evil-org-agenda)
+                 (evil-org-agenda-set-keys)
+                 )
     )
   ;; 不用evil
   ;; emacs 改变光标形状
@@ -55,6 +64,7 @@
   (evil-leader/set-key "wh" 'evil-window-left)
   (evil-leader/set-key "wk" 'evil-window-up)
   (evil-leader/set-key "wj" 'evil-window-down)
+  (evil-leader/set-key "wd" 'evil-quit)
   )
 
 ;; 统一在这里设置按键映射
