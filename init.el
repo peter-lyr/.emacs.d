@@ -61,12 +61,14 @@
 
 (defun evil-leader-set-key ()
   (interactive)
+  ;; 重新加载init.el
+  (evil-leader/set-key "fi" '(lambda () (interactive) (find-file "~/.emacs.d/init.el")))
   ;; avy
   (evil-leader/set-key "f;" 'avy-goto-char)
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
   ;; 快速打开org文件
-  (evil-leader/set-key "fo" 'open-init-org)
+  (evil-leader/set-key "fo" 'open-init-org) ; :自定义函数:
   ;; org roam
   (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
   (evil-leader/set-key "nf" 'org-roam-node-find)
@@ -83,6 +85,9 @@
   ;; 回车键怎么能少得了呢
   ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
   (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
+  ;; 一次跳5行
+  (define-key evil-normal-state-map (kbd "C-j") '(lambda () (interactive) (evil-next-line 5)))
+  (define-key evil-normal-state-map (kbd "C-k") '(lambda () (interactive) (evil-previous-line 5)))
   )
 
 ;; 统一在这里设置按键映射
