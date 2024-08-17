@@ -10,4 +10,12 @@
 ;; ;; M-RET不要切割当前行
 ;; (setq org-M-RET-may-split-line nil)
 
+;; 调用后有好多按键映射会失灵
+;; (defun reload-init-el ()
+;;   (interactive)
+;;   (load-file "~/.emacs.d/init.el")
+;;   )
+;; ;; 重新加载init.el
+;; (evil-leader/set-key "li" 'reload-init-el)
+
 (provide 'init-test)

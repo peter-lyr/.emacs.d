@@ -20,6 +20,9 @@
     ;; 开启vi模式
     (use-package evil
                  :ensure t
+                 :init
+                 (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+                 (setq evil-want-keybinding nil)
                  :config
                  (evil-mode 1))
     (use-package evil-leader
@@ -36,6 +39,10 @@
                  (require 'evil-org-agenda)
                  (evil-org-agenda-set-keys)
                  )
+    (use-package evil-collection
+                 :after evil
+                 :config
+                 (evil-collection-init))
     )
   ;; 不用evil
   ;; emacs 改变光标形状
