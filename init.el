@@ -86,7 +86,7 @@
   (evil-leader/set-key "fci" 'open-init-el)
   (evil-leader/set-key "fco" 'open-init-org-el)
   ;; avy
-  (evil-leader/set-key "f;" 'avy-goto-char)
+  (evil-leader/set-key "s" 'avy-goto-char)
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
   ;; 打开org文件
