@@ -33,7 +33,7 @@
     (use-package evil-org
                  :ensure t
                  :after org
-                 :hook (org-mode . 'evil-org-mode)
+                 :hook (org-mode . evil-org-mode)
                  :config
                  (evil-org-set-key-theme)
                  (require 'evil-org-agenda)
