@@ -1,9 +1,28 @@
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
 ;; 是否使能vi模式
-(if nil
-  ;; vi模式
-  (use-package evil
-               :ensure t
-               :config (evil-mode 1))
+(setq use-evil t)
+
+;; 是否使能vi模式
+(if use-evil
+  (progn
+    (use-package evil
+                 :ensure t
+                 :config
+                 (evil-mode 1))
+    (use-package evil-leader
+                 :ensure t
+                 :config
+                 (global-evil-leader-mode)
+                 (evil-leader/set-leader "SPC"))
+    )
+  ;; 不用evil
   ;; emacs 改变光标形状
   ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
   (setq-default cursor-type 'bar))
@@ -12,6 +31,9 @@
 (use-package dracula-theme
              :ensure t
              :config (load-theme 'dracula t))
+
+;; 关闭Emacs的欢迎界面
+(setq inhibit-startup-screen t)
 
 ;; 无工具栏，菜单栏和滚动栏
 (tool-bar-mode -1)
@@ -26,13 +48,9 @@
 
 ;; 让emacs启动就全屏
 ;; (add-hook 'window-setup-hook #'toggle-frame-maximized t)
-
 ;; 50行160列
 (set-frame-height (selected-frame) 50)
 (set-frame-width (selected-frame) 160)
-
-;; 关闭Emacs的欢迎界面
-(setq inhibit-startup-screen t)
 
 ;; 显示行号
 (global-display-line-numbers-mode 1)
@@ -40,10 +58,12 @@
 ;; 当另一程序修改了文件时，让Emacs及时刷新Buffer
 (global-auto-revert-mode t)
 
+;; ================================= org start =================================
+
 ;; Org文件以指定的目录深度打开 startup:show2levels
 ;; #+STARTUP: overview
 ;; https://emacs-china.org/t/org-startup-show2levels/16499
-;; (setq org-startup-folded 'show2levels)
+(setq org-startup-folded 'show2levels)
 
 ;; #+STARTUP: indent
 ;; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
@@ -73,10 +93,6 @@
              :ensure t
              :custom
              (org-roam-directory (file-truename "~/depei/repos/org/"))
-             :bind (("C-c n l" . org-roam-buffer-toggle)
-                    ("C-c n f" . org-roam-node-find)
-                    ("C-c n i" . org-roam-node-insert)
-                    )
              :config
              (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
              (setq org-roam-capture-templates
@@ -85,15 +101,20 @@
                       :target (file+head
                                 "${slug}.org"
                                 "#+title: ${title}
-#+created: %<%Y/%m/%d %H:%M:%S>"
+                                #+created: %<%Y/%m/%d %H:%M:%S>"
                                 )
                       :unnarrowed t)))
              (org-roam-db-autosync-mode)
              (require 'org-roam-protocol))
 
-;; avy
-(use-package avy
-             :bind (("C-c j" . avy-goto-char)))
+(if (not use-evil)
+  (progn
+    (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+    (global-set-key (kbd "C-c n f") 'org-roam-node-find)
+    (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+    )
+  )
+
 
 ;;; agenda默认按列展示
 (setq org-agenda-view-columns-initially t)
@@ -108,26 +129,44 @@
 ;; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
 
-;; M-RET不要切割当前行
-(setq org-M-RET-may-split-line nil)
-
 ;; ;; 上电打开org文件
 ;; ;; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
 ;; (find-file "~/depei/repos/org/init.org")
 (defun open-init-org()
   (interactive)
   (find-file "~/depei/repos/org/init.org"))
-(global-set-key (kbd "C-x C-<return>") 'open-init-org)
+(if (not use-evil)
+  (global-set-key (kbd "C-x C-<return>") 'open-init-org)
+  )
 
+;; DONE 表格对齐，增加上电时长
+(use-package valign
+             :ensure t
+             :config
+             (setq valign-fancy-bar t)
+             (add-hook 'org-mode-hook #'valign-mode))
+
+;; ================================== org end ==================================
+
+;; avy查找并将光标位置快速跳到某个字符
+(if use-evil
+  (use-package avy)
+  (use-package avy :bind (("C-c j" . avy-goto-char)))
+  )
+
+;; ;; M-RET不要切割当前行
+;; (setq org-M-RET-may-split-line nil)
+
+;; 自动保存
 ;; http://xahlee.info/emacs/emacs/emacs_auto_save.html
 ;; Emacs: Real Automatic Save File
 (auto-save-visited-mode 1)
 (setq auto-save-visited-interval 30)
 ;; Auto Save File When Switching Out of Emacs
-(defun xah-save-all-unsaved ()
+(defun save-all-unsaved ()
   (interactive)
   (save-some-buffers t ))
-(setq after-focus-change-function 'xah-save-all-unsaved)
+(setq after-focus-change-function 'save-all-unsaved)
 
 ;; 设置字体
 (set-face-attribute 'default nil :font "Hack NFM")
@@ -144,13 +183,18 @@
 ;; Emacs禁止自动产生备份文件
 (setq make-backup-files nil)
 
-;; DONE 表格对齐，增加上电时长
-(use-package valign
-             :ensure t
-             :config
-             (setq valign-fancy-bar t)
-             (add-hook 'org-mode-hook #'valign-mode))
-
 ;; 编码系统
 ;; 解决每次退出都要提示一次，要按好多次才能退出的问题
 (set-default-coding-systems 'utf-8)
+
+;; 统一在这里设置按键映射
+(if use-evil
+  (progn
+    (evil-leader/set-key "f;" 'avy-goto-char)
+    (evil-leader/set-key "fj" 'dired-jump)
+    (evil-leader/set-key "fo" 'open-init-org)
+    (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
+    (evil-leader/set-key "nf" 'org-roam-node-find)
+    (evil-leader/set-key "ni" 'org-roam-node-insert)
+    )
+  )
