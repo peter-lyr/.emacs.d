@@ -109,6 +109,8 @@
   ;; emacs关闭或重启
   (evil-leader/set-key "frr" 'my-restart-emacs)
   (evil-leader/set-key "frq" 'save-buffers-kill-terminal)
+  ;; 重新刷新package-archive-contents
+  (evil-leader/set-key "frp" 'refresh-package-archive-contents)
   ;; 窗口最大化和一样大
   (evil-leader/set-key "wm" 'zoom-window-zoom)
   (evil-leader/set-key "we" 'balance-windows)

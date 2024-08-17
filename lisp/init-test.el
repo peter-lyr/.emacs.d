@@ -22,4 +22,7 @@
 ;; (define-key evil-normal-state-map (kbd "C-j") 'next-5-lines)
 ;; (define-key evil-normal-state-map (kbd "C-k") 'prev-5-lines)
 
+;; ■  Error (use-package): Failed to install helm: https://melpa.org/packages/helm-core-20240813.1920.tar: Not found
+;; ■  Error (use-package): Cannot load helm
+
 (provide 'init-test)
