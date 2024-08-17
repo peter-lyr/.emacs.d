@@ -59,20 +59,34 @@
   (use-package avy :bind (("C-c j" . avy-goto-char)))
   )
 
+;; 窗口最大化
 (use-package zoom-window
              :config
              (setq zoom-window-mode-line-color nil)
              )
 
+;; which-key
+(use-package which-key
+             :ensure t
+             :config
+             (setq which-key-popup-type 'minibuffer)
+             (which-key-mode)
+             )
+
+;; which-key的prefix定义
+(which-key-add-key-based-replacements "SPC f" "find-file")
+(which-key-add-key-based-replacements "SPC w" "window")
+(which-key-add-key-based-replacements "SPC n" "note")
+
 (defun evil-leader-set-key ()
   (interactive)
-  ;; 重新加载init.el
-  (evil-leader/set-key "fi" '(lambda () (interactive) (find-file "~/.emacs.d/init.el")))
+  ;; 打开init.el文件
+  (evil-leader/set-key "fi" 'open-init-el)
   ;; avy
   (evil-leader/set-key "f;" 'avy-goto-char)
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
-  ;; 快速打开org文件
+  ;; 打开org文件
   (evil-leader/set-key "fo" 'open-init-org) ; :自定义函数:
   ;; org roam
   (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
@@ -95,8 +109,8 @@
   ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
   (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
   ;; 一次跳5行
-  (define-key evil-normal-state-map (kbd "C-j") '(lambda () (interactive) (evil-next-line 5)))
-  (define-key evil-normal-state-map (kbd "C-k") '(lambda () (interactive) (evil-previous-line 5)))
+  (define-key evil-motion-state-map (kbd "C-j") 'next-5-lines)
+  (define-key evil-motion-state-map (kbd "C-k") 'prev-5-lines)
   )
 
 ;; 统一在这里设置按键映射

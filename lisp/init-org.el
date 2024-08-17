@@ -67,12 +67,6 @@
 ;; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
 
-;; ;; 上电打开org文件
-;; ;; https://superuser.com/questions/400457/how-to-automatically-open-a-file-when-emacs-start
-;; (find-file "~/depei/repos/org/init.org")
-(defun open-init-org()
-  (interactive)
-  (find-file "~/depei/repos/org/init.org"))
 (if (not use-evil)
   (global-set-key (kbd "C-x C-<return>") 'open-init-org)
   )

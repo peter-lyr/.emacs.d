@@ -18,4 +18,8 @@
 ;; ;; 重新加载init.el
 ;; (evil-leader/set-key "li" 'reload-init-el)
 
+;; normal模式
+;; (define-key evil-normal-state-map (kbd "C-j") 'next-5-lines)
+;; (define-key evil-normal-state-map (kbd "C-k") 'prev-5-lines)
+
 (provide 'init-test)
