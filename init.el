@@ -76,13 +76,15 @@
 
 ;; which-key的prefix定义
 (which-key-add-key-based-replacements "SPC f" "find-file")
+(which-key-add-key-based-replacements "SPC f c" "find-file config")
 (which-key-add-key-based-replacements "SPC w" "window")
 (which-key-add-key-based-replacements "SPC n" "note")
 
 (defun evil-leader-set-key ()
   (interactive)
   ;; 打开init.el文件
-  (evil-leader/set-key "fi" 'open-init-el)
+  (evil-leader/set-key "fci" 'open-init-el)
+  (evil-leader/set-key "fco" 'open-init-org-el)
   ;; avy
   (evil-leader/set-key "f;" 'avy-goto-char)
   ;; dired
