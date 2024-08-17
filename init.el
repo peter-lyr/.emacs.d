@@ -54,17 +54,25 @@
 
 (defun evil-leader-set-key ()
   (interactive)
+  ;; avy
   (evil-leader/set-key "f;" 'avy-goto-char)
+  ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
+  ;; 快速打开org文件
   (evil-leader/set-key "fo" 'open-init-org)
+  ;; org roam
   (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
   (evil-leader/set-key "nf" 'org-roam-node-find)
   (evil-leader/set-key "ni" 'org-roam-node-insert)
+  ;; 窗口跳转
   (evil-leader/set-key "wl" 'evil-window-right)
   (evil-leader/set-key "wh" 'evil-window-left)
   (evil-leader/set-key "wk" 'evil-window-up)
   (evil-leader/set-key "wj" 'evil-window-down)
   (evil-leader/set-key "wd" 'evil-quit)
+  ;; 回车键怎么能少得了呢
+  ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
+  (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
   )
 
 ;; 统一在这里设置按键映射
