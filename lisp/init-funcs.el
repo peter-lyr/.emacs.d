@@ -27,4 +27,10 @@
   (interactive)
   (find-file "~/depei/repos/org/init.org"))
 
+(defun refresh-package-archive-contents ()
+  "重新刷新package-archive-contents"
+  (interactive)
+  (package-refresh-contents)
+  )
+
 (provide 'init-funcs)

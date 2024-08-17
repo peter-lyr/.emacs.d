@@ -74,6 +74,10 @@
              (which-key-mode)
              )
 
+;; helm查找文件
+(use-package helm
+             :ensure t)
+
 ;; which-key的prefix定义
 (which-key-add-key-based-replacements "SPC f" "find-file/frame")
 (which-key-add-key-based-replacements "SPC f c" "find-file config")
@@ -86,6 +90,8 @@
   ;; 打开init.el文件
   (evil-leader/set-key "fci" 'open-init-el)
   (evil-leader/set-key "fco" 'open-init-org-el)
+  ;; 查找文件
+  (evil-leader/set-key "ff" 'helm-find-files)
   ;; avy
   (evil-leader/set-key "s" 'avy-goto-char)
   ;; dired
