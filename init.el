@@ -114,6 +114,9 @@
   (evil-leader/set-key "wj" 'evil-window-down)
   ;; 窗口关闭
   (evil-leader/set-key "wd" 'evil-quit)
+  ;; 下一个窗口/切换
+  (evil-leader/set-key "wp" 'evil-window-mru)
+  (evil-leader/set-key "wn" 'evil-window-next)
   ;; emacs关闭或重启
   (evil-leader/set-key "frr" 'my-restart-emacs)
   (evil-leader/set-key "frq" 'save-buffers-kill-terminal)
