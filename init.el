@@ -16,7 +16,7 @@
 (setq use-evil t)
 
 ;; 是否使which-key
-(setq use-which-key nil)
+(setq use-which-key t)
 
 (if use-evil
   (progn
