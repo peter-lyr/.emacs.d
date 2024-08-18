@@ -15,6 +15,9 @@
 ;; 是否使能vi模式，后面会用到
 (setq use-evil t)
 
+;; 是否使which-key
+(setq use-which-key nil)
+
 (if use-evil
   (progn
     ;; 开启vi模式
@@ -66,24 +69,30 @@
              (setq zoom-window-mode-line-color nil)
              )
 
-;; which-key
-(use-package which-key
-             :ensure t
-             :config
-             (setq which-key-popup-type 'minibuffer)
-             (which-key-mode)
-             )
-
 ;; helm查找文件
 (use-package helm
              :ensure t)
 
-;; which-key的prefix定义
-(which-key-add-key-based-replacements "SPC f" "find-file/frame")
-(which-key-add-key-based-replacements "SPC f c" "find-file config")
-(which-key-add-key-based-replacements "SPC f r" "frame")
-(which-key-add-key-based-replacements "SPC w" "window")
-(which-key-add-key-based-replacements "SPC n" "note")
+(if use-which-key
+  ;; which-key
+  (use-package which-key
+               :ensure t
+               :config
+               (setq which-key-popup-type 'minibuffer)
+               (which-key-mode)
+               )
+  )
+
+(if use-which-key
+  ;; which-key的prefix定义
+  (progn
+    (which-key-add-key-based-replacements "SPC f" "find-file/frame")
+    (which-key-add-key-based-replacements "SPC f c" "find-file config")
+    (which-key-add-key-based-replacements "SPC f r" "frame")
+    (which-key-add-key-based-replacements "SPC w" "window")
+    (which-key-add-key-based-replacements "SPC n" "note")
+    )
+  )
 
 (defun evil-leader-set-key ()
   (interactive)
