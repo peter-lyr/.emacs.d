@@ -131,6 +131,8 @@
   (evil-leader/set-key-for-mode 'org-mode "nl" 'org-roam-buffer-toggle)
   (evil-leader/set-key-for-mode 'org-mode "nf" 'org-roam-node-find)
   (evil-leader/set-key-for-mode 'org-mode "ni" 'org-roam-node-insert)
+  ;; org roam ui
+  (evil-leader/set-key-for-mode 'org-mode "nu" 'org-roam-ui-mode)
   ;; 窗口复制
   (evil-leader/set-key "ws" 'evil-window-split)
   (evil-leader/set-key "wv" 'evil-window-vsplit)
