@@ -40,7 +40,20 @@
                  :config
                  (evil-org-set-key-theme)
                  (require 'evil-org-agenda)
-                 (evil-org-agenda-set-keys)
+                 ;; (evil-org-agenda-set-keys) ;; See https://github.com/Somelauw/evil-org-mode/blob/master/evil-org-agenda.el
+                 (evil-set-initial-state 'org-agenda-mode 'motion)
+                 (evil-define-key 'motion org-agenda-mode-map
+                                  "'" 'org-agenda-show-and-scroll-up
+                                  "j" 'org-agenda-next-line
+                                  "k" 'org-agenda-previous-line
+                                  "gw" 'org-agenda-week-view
+                                  "gm" 'org-agenda-month-view
+                                  "gy" 'org-agenda-year-view
+                                  "f" 'org-agenda-later
+                                  "b" 'org-agenda-earlier
+                                  "." 'org-agenda-toggle-time-grid
+                                  "n" 'org-agenda-add-note
+                                  )
                  )
     (use-package evil-collection
                  :after evil
