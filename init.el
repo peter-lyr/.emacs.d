@@ -101,6 +101,9 @@
   ;; 打开org文件
   (evil-leader/set-key "fo" 'open-init-org) ; :自定义函数:
   ;; org roam
+  (evil-leader/set-key "no" 'org-agenda)
+  (evil-leader/set-key "na" 'org-agenda-list)
+  (evil-leader/set-key "nt" 'org-todo-list)
   (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
   (evil-leader/set-key "nf" 'org-roam-node-find)
   (evil-leader/set-key "ni" 'org-roam-node-insert)
