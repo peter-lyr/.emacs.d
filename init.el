@@ -91,6 +91,7 @@
     (which-key-add-key-based-replacements "SPC f r" "frame")
     (which-key-add-key-based-replacements "SPC w" "window")
     (which-key-add-key-based-replacements "SPC n" "note")
+    (which-key-add-key-based-replacements "SPC b" "buffer")
     )
   )
 
@@ -129,6 +130,12 @@
   ;; 下一个窗口/切换
   (evil-leader/set-key "wp" 'evil-window-mru)
   (evil-leader/set-key "wn" 'evil-window-next)
+  ;; 上/下一个buffer
+  (evil-leader/set-key "bn" 'next-buffer)
+  (evil-leader/set-key "bp" 'previous-buffer)
+  (evil-leader/set-key "bb" 'list-buffers)
+  ;; 关闭buffer
+  (evil-leader/set-key "bd" 'evil-delete-buffer)
   ;; emacs关闭或重启
   (evil-leader/set-key "frr" 'my-restart-emacs)
   (evil-leader/set-key "frq" 'save-buffers-kill-terminal)
