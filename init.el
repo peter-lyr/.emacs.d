@@ -123,13 +123,14 @@
   (evil-leader/set-key "fj" 'dired-jump)
   ;; 打开org文件
   (evil-leader/set-key "fo" 'open-init-org) ; :自定义函数:
+  ;; org agenda
+  (evil-leader/set-key-for-mode 'org-mode "no" 'org-agenda)
+  (evil-leader/set-key-for-mode 'org-mode "na" 'org-agenda-list)
+  (evil-leader/set-key-for-mode 'org-mode "nt" 'org-todo-list)
   ;; org roam
-  (evil-leader/set-key "no" 'org-agenda)
-  (evil-leader/set-key "na" 'org-agenda-list)
-  (evil-leader/set-key "nt" 'org-todo-list)
-  (evil-leader/set-key "nl" 'org-roam-buffer-toggle)
-  (evil-leader/set-key "nf" 'org-roam-node-find)
-  (evil-leader/set-key "ni" 'org-roam-node-insert)
+  (evil-leader/set-key-for-mode 'org-mode "nl" 'org-roam-buffer-toggle)
+  (evil-leader/set-key-for-mode 'org-mode "nf" 'org-roam-node-find)
+  (evil-leader/set-key-for-mode 'org-mode "ni" 'org-roam-node-insert)
   ;; 窗口复制
   (evil-leader/set-key "ws" 'evil-window-split)
   (evil-leader/set-key "wv" 'evil-window-vsplit)
