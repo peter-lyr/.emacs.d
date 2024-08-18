@@ -19,7 +19,7 @@
 (defun open-init-org-el ()
   "打开init-org.el"
   (interactive)
-  (find-file "~/.emacs.d/lisp/init.el")
+  (find-file "~/.emacs.d/lisp/init-org.el")
   )
 
 (defun open-init-org()
