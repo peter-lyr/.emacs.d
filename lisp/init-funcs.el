@@ -33,4 +33,14 @@
   (package-refresh-contents)
   )
 
+(defun copy-buffer-file-name ()
+  "Copy the full path to the current file and show in the minibuffer."
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (if file-name
+      (progn
+        (message file-name)
+        (kill-new file-name))
+      (error "Buffer not visiting a file"))))
+
 (provide 'init-funcs)

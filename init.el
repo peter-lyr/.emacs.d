@@ -92,6 +92,8 @@
   (evil-leader/set-key "fco" 'open-init-org-el)
   ;; 查找文件
   (evil-leader/set-key "ff" 'helm-find-files)
+  ;; 复制文件路径
+  (evil-leader/set-key "fy" 'copy-buffer-file-name)
   ;; avy
   (evil-leader/set-key "s" 'avy-goto-char)
   ;; dired
