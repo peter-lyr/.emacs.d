@@ -49,12 +49,12 @@
                                   "gw" 'org-agenda-week-view
                                   "gm" 'org-agenda-month-view
                                   "gy" 'org-agenda-year-view
+                                  "g." 'org-agenda-toggle-time-grid
+                                  "gt" 'org-agenda-goto-today
+                                  "gl" 'org-agenda-log-mode
                                   "f" 'org-agenda-later
                                   "b" 'org-agenda-earlier
-                                  "." 'org-agenda-toggle-time-grid
                                   "n" 'org-agenda-add-note
-                                  "t" 'org-agenda-goto-today
-                                  "l" 'org-agenda-log-mode
                                   )
                  )
     (use-package evil-collection
