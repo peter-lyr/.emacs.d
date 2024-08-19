@@ -57,6 +57,7 @@
                                   )
                  )
     (use-package evil-collection
+                 :ensure t
                  :after evil
                  :config
                  (evil-collection-init))
@@ -73,19 +74,20 @@
 
 ;; avy查找并将光标位置快速跳到某个字符
 (if use-evil
-  (use-package avy)
-  (use-package avy :bind (("C-c j" . avy-goto-char)))
+  (use-package avy :ensure t)
+  (use-package avy :ensure t
+               :bind (("C-c j" . avy-goto-char)))
   )
 
 ;; 窗口最大化
 (use-package zoom-window
+             :ensure t
              :config
              (setq zoom-window-mode-line-color nil)
              )
 
 ;; helm查找文件
-(use-package helm
-             :ensure t)
+(use-package helm :ensure t)
 
 (if use-which-key
   ;; which-key
