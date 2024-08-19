@@ -70,6 +70,8 @@
     )
   )
 
+;; 把日志记录在LOGBOOK里
+(setq org-log-into-drawer t)
 
 ;;; agenda默认按列展示
 (setq org-agenda-view-columns-initially t)
