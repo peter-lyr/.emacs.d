@@ -27,6 +27,11 @@
   (interactive)
   (find-file "~/depei/repos/org/init.org"))
 
+(defun open-work-org()
+  "上电打开work.org文件"
+  (interactive)
+  (find-file "~/depei/repos/org/work.org"))
+
 (defun refresh-package-archive-contents ()
   "重新刷新package-archive-contents"
   (interactive)

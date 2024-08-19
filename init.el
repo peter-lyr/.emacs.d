@@ -104,7 +104,8 @@
   ;; which-key的prefix定义
   (progn
     (which-key-add-key-based-replacements "SPC f" "find-file/frame")
-    (which-key-add-key-based-replacements "SPC f c" "find-file config")
+    (which-key-add-key-based-replacements "SPC f e" "find-file open config el")
+    (which-key-add-key-based-replacements "SPC f o" "find-file open org")
     (which-key-add-key-based-replacements "SPC f r" "frame")
     (which-key-add-key-based-replacements "SPC w" "window")
     (which-key-add-key-based-replacements "SPC n" "note")
@@ -115,8 +116,8 @@
 (defun evil-leader-set-key ()
   (interactive)
   ;; 打开init.el文件
-  (evil-leader/set-key "fci" 'open-init-el)
-  (evil-leader/set-key "fco" 'open-init-org-el)
+  (evil-leader/set-key "fei" 'open-init-el)
+  (evil-leader/set-key "feo" 'open-init-org-el)
   ;; 查找文件
   (evil-leader/set-key "ff" 'helm-find-files)
   ;; 复制文件路径
@@ -126,7 +127,8 @@
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
   ;; 打开org文件
-  (evil-leader/set-key "fo" 'open-init-org) ; :自定义函数:
+  (evil-leader/set-key "foi" 'open-init-org)
+  (evil-leader/set-key "fow" 'open-work-org)
   ;; org agenda
   (evil-leader/set-key-for-mode 'org-mode "no" 'org-agenda)
   (evil-leader/set-key-for-mode 'org-mode "na" 'org-agenda-list)
