@@ -76,7 +76,9 @@
 ;;; agenda默认按列展示
 (setq org-agenda-view-columns-initially t)
 ;; https://orgmode.org/manual/Column-attributes.html
-(setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %40ITEM %TAGS %1PRIORITY %CATEGORY")
+;; (setq org-columns-default-format-for-agenda "%TODO %SCHEDULED %40ITEM %TAGS %1PRIORITY %CATEGORY")
+;; (setq org-columns-default-format-for-agenda "%TODO %ALLTAGS %BLOCKED %CATEGORY %CLOCKSUM %CLOCKSUM_T %CLOSED %DEADLINE %FILE %PRIORITY %SCHEDULED %TAGS %TIMESTAMP %TIMESTAMP_IA %ITEM")
+(setq org-columns-default-format-for-agenda "%TODO %ALLTAGS %BLOCKED %CLOCKSUM %CLOCKSUM_T %CLOSED %DEADLINE %PRIORITY %SCHEDULED %TAGS %TIMESTAMP %TIMESTAMP_IA %ITEM")
 
 ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
 ;; #+STARTUP: logdone
