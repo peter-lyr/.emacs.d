@@ -54,6 +54,7 @@
                                   "." 'org-agenda-toggle-time-grid
                                   "n" 'org-agenda-add-note
                                   "t" 'org-agenda-goto-today
+                                  "l" 'org-agenda-log-mode
                                   )
                  )
     (use-package evil-collection
