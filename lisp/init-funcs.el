@@ -61,4 +61,11 @@
       (message "%s copied" new-kill-string)
       (kill-new new-kill-string))))
 
+(defun format-code ()
+  "format whole buffer."
+  (interactive)
+  (if (derived-mode-p 'prolog-mode)
+    (prolog-indent-buffer)
+    (format-all-buffer)))
+
 (provide 'init-funcs)

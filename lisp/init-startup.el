@@ -40,7 +40,7 @@
 ;; Auto Save File When Switching Out of Emacs
 (defun save-all-unsaved ()
   (interactive)
-  (save-some-buffers t ))
+  (save-some-buffers t))
 (setq after-focus-change-function 'save-all-unsaved)
 
 ;; Emacs禁止自动产生备份文件
