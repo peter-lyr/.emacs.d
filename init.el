@@ -120,6 +120,7 @@
       (which-key-add-key-based-replacements "SPC f o" "find-file open org")
       (which-key-add-key-based-replacements "SPC f r" "frame")
       (which-key-add-key-based-replacements "SPC w" "window")
+      (which-key-add-key-based-replacements "SPC w s" "window split")
       (which-key-add-key-based-replacements "SPC n" "note")
       (which-key-add-key-based-replacements "SPC b" "buffer")
       )
@@ -152,8 +153,10 @@
   ;; org roam ui
   (evil-leader/set-key-for-mode 'org-mode "nu" 'org-roam-ui-mode)
   ;; 窗口复制
-  (evil-leader/set-key "ws" 'evil-window-split)
-  (evil-leader/set-key "wv" 'evil-window-vsplit)
+  (evil-leader/set-key "wsl" 'window-split-right)
+  (evil-leader/set-key "wsh" 'window-split-left)
+  (evil-leader/set-key "wsk" 'window-split-up)
+  (evil-leader/set-key "wsj" 'window-split-down)
   ;; 窗口跳转
   (evil-leader/set-key "wl" 'evil-window-right)
   (evil-leader/set-key "wh" 'evil-window-left)
