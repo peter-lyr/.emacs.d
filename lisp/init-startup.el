@@ -79,4 +79,9 @@
 ;; 编程模式下，光标在括号上时高亮另一个括号
 (add-hook 'prog-mode-hook #'show-paren-mode)
 
+;; 历史文件
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+
 (provide 'init-startup)

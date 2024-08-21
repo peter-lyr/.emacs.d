@@ -118,7 +118,6 @@
       (which-key-add-key-based-replacements "SPC f" "find-file/frame/format")
       (which-key-add-key-based-replacements "SPC f e" "find-file open config el")
       (which-key-add-key-based-replacements "SPC f o" "find-file open org")
-      (which-key-add-key-based-replacements "SPC f r" "frame")
       (which-key-add-key-based-replacements "SPC w" "window")
       (which-key-add-key-based-replacements "SPC w s" "window split")
       (which-key-add-key-based-replacements "SPC w x" "window close")
@@ -145,6 +144,8 @@
   ;; 打开org文件
   (evil-leader/set-key "foi" 'open-init-org)
   (evil-leader/set-key "fow" 'open-work-org)
+  ;; 打开recentf
+  (evil-leader/set-key "fd" 'recentf-open-files) ;; dashboard按键简单一点好
   ;; org agenda
   (evil-leader/set-key-for-mode 'org-mode "no" 'org-agenda)
   (evil-leader/set-key-for-mode 'org-mode "na" 'org-agenda-list)
