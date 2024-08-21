@@ -179,6 +179,9 @@
   (evil-leader/set-key "bn" 'next-buffer)
   (evil-leader/set-key "bp" 'previous-buffer)
   (evil-leader/set-key "bb" 'list-buffers)
+  ;; message buffer
+  (evil-leader/set-key "bm" 'buffer-messages)
+  (evil-leader/set-key "bs" 'buffer-scratch)
   ;; 关闭buffer
   (evil-leader/set-key "bd" 'evil-delete-buffer)
   ;; emacs关闭或重启

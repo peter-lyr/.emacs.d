@@ -122,4 +122,16 @@
       (prolog-indent-buffer)
     (format-all-buffer)))
 
+(defun buffer-messages ()
+  "go *Messages* buffer"
+  (interactive)
+  (switch-to-buffer "*Messages*")
+  )
+
+(defun buffer-scratch ()
+  "go *scratch* buffer"
+  (interactive)
+  (switch-to-buffer "*scratch")
+  )
+
 (provide 'init-funcs)
