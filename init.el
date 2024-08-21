@@ -121,6 +121,7 @@
       (which-key-add-key-based-replacements "SPC f r" "frame")
       (which-key-add-key-based-replacements "SPC w" "window")
       (which-key-add-key-based-replacements "SPC w s" "window split")
+      (which-key-add-key-based-replacements "SPC w x" "window close")
       (which-key-add-key-based-replacements "SPC n" "note")
       (which-key-add-key-based-replacements "SPC b" "buffer")
       )
@@ -166,6 +167,10 @@
   (evil-leader/set-key "wj" 'evil-window-down)
   ;; 窗口关闭
   (evil-leader/set-key "wd" 'evil-quit)
+  (evil-leader/set-key "wxl" 'window-close-right)
+  (evil-leader/set-key "wxh" 'window-close-left)
+  (evil-leader/set-key "wxk" 'window-close-up)
+  (evil-leader/set-key "wxj" 'window-close-down)
   ;; 下一个窗口/切换
   (evil-leader/set-key "wp" 'evil-window-mru)
   (evil-leader/set-key "wn" 'evil-window-next)

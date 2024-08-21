@@ -30,6 +30,34 @@
   (evil-window-vsplit)
   )
 
+(defun window-close-up ()
+  "close up window"
+  (interactive)
+  (windmove-up)
+  (delete-window)
+  )
+
+(defun window-close-down ()
+  "close down window"
+  (interactive)
+  (windmove-down)
+  (delete-window)
+  )
+
+(defun window-close-right ()
+  "close right window"
+  (interactive)
+  (windmove-right)
+  (delete-window)
+  )
+
+(defun window-close-left ()
+  "close left window"
+  (interactive)
+  (windmove-left)
+  (delete-window)
+  )
+
 (defun next-5-lines ()
   "向下移动5行"
   (interactive)
