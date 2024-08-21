@@ -136,7 +136,7 @@
   )
 
 ;; emacs怎么跳转到指定buffer所在的window
-(defun my-switch-to-buffer-window (buffer-name)
+(defun switch-to-buffer-window (buffer-name)
   "Switch to the window displaying BUFFER-NAME."
   (let ((buffer (get-buffer buffer-name)))
     (if buffer
@@ -150,7 +150,7 @@
   "go buffers"
   (interactive)
   (list-buffers)
-  (my-switch-to-buffer-window "*Buffer List*")
+  (switch-to-buffer-window "*Buffer List*")
   )
 
 (provide 'init-funcs)
