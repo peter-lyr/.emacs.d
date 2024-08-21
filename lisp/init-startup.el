@@ -71,7 +71,7 @@
   (interactive)
   (restart-emacs-start-new-emacs)
   (save-buffers-kill-terminal))
-(global-set-key (kbd "C-x C-r") 'my-restart-emacs) ;; 以防有时evil死掉了
+(global-set-key (kbd "C-x C-<delete>") 'my-restart-emacs) ;; 以防有时evil死掉了
 
 ;; 自动补全括号
 (electric-pair-mode t)
