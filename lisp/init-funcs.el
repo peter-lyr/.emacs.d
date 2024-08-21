@@ -123,15 +123,34 @@
     (format-all-buffer)))
 
 (defun buffer-messages ()
+(defun go-buffer-messages ()
   "go *Messages* buffer"
   (interactive)
   (switch-to-buffer "*Messages*")
   )
 
-(defun buffer-scratch ()
+(defun go-buffer-scratch ()
   "go *scratch* buffer"
   (interactive)
   (switch-to-buffer "*scratch")
+  )
+
+;; emacs怎么跳转到指定buffer所在的window
+(defun my-switch-to-buffer-window (buffer-name)
+  "Switch to the window displaying BUFFER-NAME."
+  (let ((buffer (get-buffer buffer-name)))
+    (if buffer
+      (let ((window (get-buffer-window buffer)))
+        (if window
+          (select-window window)
+          (message "Buffer %s is not displayed in any window" buffer-name)))
+      (message "Buffer %s does not exist" buffer-name))))
+
+(defun go-buffers ()
+  "go buffers"
+  (interactive)
+  (list-buffers)
+  (my-switch-to-buffer-window "*Buffer List*")
   )
 
 (provide 'init-funcs)
