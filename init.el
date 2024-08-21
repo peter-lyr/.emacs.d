@@ -27,7 +27,10 @@
         ;; (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
         (setq evil-want-keybinding nil)
         :config
-        (evil-mode 1))
+        (evil-mode 1)
+        (add-hook 'evil-insert-state-exit-hook 'exit-insert-mode-hook)
+        (add-hook 'evil-insert-state-entry-hook 'enter-insert-mode-hook)
+        )
       (use-package evil-leader
         :ensure t
         :config

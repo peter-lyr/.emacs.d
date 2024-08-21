@@ -3,5 +3,6 @@
 
 !lisp
 !lisp/*.el
+!lisp/*.py
 !init.el
 !README.md

@@ -1,3 +1,7 @@
+(setq dot-emacs-dot-d (file-name-directory user-init-file))
+(setq lisp-dir (format "%slisp/" dot-emacs-dot-d))
+(setq input-method-py (format "%sinput-method.py" lisp-dir))
+
 (defun prev-5-lines ()
   "向上移动5行"
   (interactive)
@@ -122,7 +126,33 @@
       (prolog-indent-buffer)
     (format-all-buffer)))
 
-(defun buffer-messages ()
+(defun switch-input-method (lang)
+  "switch input method, LANG: ZH or EN"
+  (shell-command (format "python %s %s" input-method-py lang))
+  )
+
+(defun switch-input-method-to-zh ()
+  "switch input method to ZH"
+  (interactive)
+  (switch-input-method "ZH")
+  )
+
+(defun switch-input-method-to-en ()
+  "switch input method to EN"
+  (interactive)
+  (switch-input-method "EN")
+  )
+
+(defun exit-insert-mode-hook ()
+  "exit-insert-mode-hook"
+  (switch-input-method-to-en)
+  )
+
+(defun enter-insert-mode-hook ()
+  "enter-insert-mode-hook"
+  (switch-input-method-to-zh)
+  )
+
 (defun go-buffer-messages ()
   "go *Messages* buffer"
   (interactive)
