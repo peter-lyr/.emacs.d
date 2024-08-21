@@ -84,4 +84,7 @@
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
 
+;; 不要使用制表符
+(setq-default indent-tabs-mode nil)
+
 (provide 'init-startup)
