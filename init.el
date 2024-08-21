@@ -137,6 +137,8 @@
   (evil-leader/set-key "fy" 'copy-buffer-file-name)
   ;; avy
   (evil-leader/set-key "s" 'avy-goto-char)
+  ;; (evil-define-key 'normal org-mode-map (kbd "s") 'avy-goto-char)
+  (evil-define-key 'motion 'global (kbd "s") 'avy-goto-char)
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
   ;; 打开org文件
