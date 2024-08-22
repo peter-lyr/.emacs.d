@@ -11,6 +11,12 @@
   :ensure t
   :config (load-theme 'dracula t))
 
+;; (use-package monokai-theme
+;;              :ensure t
+;;              :config (load-theme 'monokai t))
+
+;; (load-theme 'tango-dark t)
+
 ;; 无边框
 (set-frame-parameter nil 'undecorated t)
 
