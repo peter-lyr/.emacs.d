@@ -128,7 +128,10 @@
 
 (defun switch-input-method (lang)
   "switch input method, LANG: ZH or EN"
-  (shell-command (format "python %s %s" input-method-py lang))
+  ;; 不输出执行结果
+  (let ((inhibit-message t)
+        (message-log-max nil))
+    (shell-command (format "python %s %s" input-method-py lang)))
   )
 
 (defun switch-input-method-to-zh ()
