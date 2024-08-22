@@ -181,7 +181,7 @@
   ;; 上/下一个buffer
   (evil-leader/set-key "bn" 'next-buffer)
   (evil-leader/set-key "bp" 'previous-buffer)
-  (evil-leader/set-key "bb" 'go-buffers)
+  (evil-leader/set-key "bb" 'go-all-buffers)
   ;; message buffer
   (evil-leader/set-key "bm" 'go-buffer-messages)
   (evil-leader/set-key "bs" 'go-buffer-scratch)

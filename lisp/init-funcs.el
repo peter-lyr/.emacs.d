@@ -170,17 +170,27 @@
   "Switch to the window displaying BUFFER-NAME."
   (let ((buffer (get-buffer buffer-name)))
     (if buffer
-      (let ((window (get-buffer-window buffer)))
-        (if window
-          (select-window window)
-          (message "Buffer %s is not displayed in any window" buffer-name)))
+        (let ((window (get-buffer-window buffer)))
+          (if window
+              (select-window window)
+            (message "Buffer %s is not displayed in any window" buffer-name)))
       (message "Buffer %s does not exist" buffer-name))))
 
-(defun go-buffers ()
-  "go buffers"
+(defun go-all-buffers ()
+  "go all buffers"
   (interactive)
   (list-buffers)
   (switch-to-buffer-window "*Buffer List*")
+  )
+
+(defun my-format-code ()
+  "Format code and Remove trailing whitespace in the current buffer."
+  (interactive)
+  (format-code)
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "[ \t]+$" nil t)
+      (replace-match "" nil nil)))
   )
 
 (provide 'init-funcs)

@@ -25,4 +25,15 @@
 ;; ■  Error (use-package): Failed to install helm: https://melpa.org/packages/helm-core-20240813.1920.tar: Not found
 ;; ■  Error (use-package): Cannot load helm
 
+;; (defun remove-trailing-whitespace ()
+;;   "Remove trailing whitespace in the current buffer."
+;;   (interactive)
+;;   (save-excursion
+;;     (goto-char (point-min))
+;;     (while (re-search-forward "[ \t]+$" nil t)
+;;       (replace-match "" nil nil))))
+;;
+;; ;; 绑定到快捷键
+;; (global-set-key (kbd "C-c C-w") 'remove-trailing-whitespace)
+
 (provide 'init-test)
