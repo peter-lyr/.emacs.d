@@ -8,8 +8,8 @@
 
 ;; 主题还是要有的
 (use-package dracula-theme
-             :ensure t
-             :config (load-theme 'dracula t))
+  :ensure t
+  :config (load-theme 'dracula t))
 
 ;; 无边框
 (set-frame-parameter nil 'undecorated t)
@@ -86,5 +86,20 @@
 
 ;; 不要使用制表符
 (setq-default indent-tabs-mode nil)
+
+;; 失去emacs焦点时切换回英文
+(add-hook 'focus-out-hook
+          (lambda ()
+            (switch-input-method-to-en)
+            ))
+
+;; 获取emacs焦点时判断设为和输入法
+(add-hook 'focus-in-hook
+          (lambda ()
+            (if (eq evil-state 'insert)
+                (switch-input-method-to-zh)
+              (switch-input-method-to-en)
+              )
+            ))
 
 (provide 'init-startup)

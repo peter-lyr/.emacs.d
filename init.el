@@ -28,6 +28,7 @@
         (setq evil-want-keybinding nil)
         :config
         (evil-mode 1)
+        ;; 切换输入法
         (add-hook 'evil-insert-state-exit-hook 'exit-insert-mode-hook)
         (add-hook 'evil-insert-state-entry-hook 'enter-insert-mode-hook)
         )
