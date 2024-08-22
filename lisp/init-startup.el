@@ -93,10 +93,10 @@
 ;; 不要使用制表符
 (setq-default indent-tabs-mode nil)
 
-;; 失去emacs焦点时切换回英文
+;; 失去emacs焦点时切换回搜狗输入法
 (add-hook 'focus-out-hook
           (lambda ()
-            (switch-input-method-to-en)
+            (switch-input-method-to-zh)
             ))
 
 ;; 获取emacs焦点时判断设为和输入法

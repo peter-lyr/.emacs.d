@@ -132,13 +132,13 @@
   )
 
 (defun switch-input-method-to-zh ()
-  "switch input method to ZH"
+  "switch input method to ZH(搜狗)"
   (interactive)
   (switch-input-method "ZH")
   )
 
 (defun switch-input-method-to-en ()
-  "switch input method to EN"
+  "switch input method to EN(US)"
   (interactive)
   (switch-input-method "EN")
   )
