@@ -95,8 +95,27 @@
   (setq zoom-window-mode-line-color nil)
   )
 
-;; helm查找文件
-(use-package helm :ensure t)
+;; ivy查找文件
+(use-package ivy
+             :ensure t
+             :demand t
+             :diminish ivy-mode
+             :config
+             (ivy-mode 1)
+             (setq ivy-use-virtual-buffers t)
+             (setq enable-recursive-minibuffers t)
+             )
+(use-package counsel
+             :ensure t
+             :after ivy
+             :config
+             (counsel-mode 1)
+             )
+(use-package counsel-projectile
+             :ensure t
+             :config
+             (counsel-projectile-mode)
+             )
 
 ;; 代码格式化
 (use-package format-all
@@ -136,7 +155,7 @@
   (evil-leader/set-key "fei" 'open-init-el)
   (evil-leader/set-key "feo" 'open-init-org-el)
   ;; 查找文件
-  (evil-leader/set-key "SPC" 'helm-find-files)
+  (evil-leader/set-key "SPC" 'counsel-projectile-find-file)
   ;; 复制文件路径
   (evil-leader/set-key "fy" 'copy-buffer-file-name)
   ;; avy
