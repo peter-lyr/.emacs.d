@@ -36,4 +36,10 @@
 ;; ;; 绑定到快捷键
 ;; (global-set-key (kbd "C-c C-w") 'remove-trailing-whitespace)
 
+;; (defun my-test ()
+;;   "test"
+;;   (interactive)
+;;   (switch-to-buffer-window "*Test*")
+;;   )
+
 (provide 'init-test)

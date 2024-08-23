@@ -128,10 +128,15 @@
 
 (defun switch-input-method (lang)
   "switch input method, LANG: ZH or EN"
-  ;; 不输出执行结果
-  (let ((inhibit-message t)
-        (message-log-max nil))
-    (shell-command (format "python %s %s" input-method-py lang)))
+  ;; ;; 不输出执行结果
+  ;; ;; 这个会阻塞emacs
+  ;; (let ((inhibit-message t)
+  ;;       (message-log-max nil))
+  ;;   (shell-command (format "python %s %s" input-method-py lang)))
+  ;; 输出执行结构到buffer
+  ;; (start-process "python-switch-input-method" "*Python Output*" "python" input-method-py lang)
+  ;; 不输出执行结构到buffer
+  (start-process "python-switch-input-method" nil "python" input-method-py lang)
   )
 
 (defun switch-input-method-to-zh ()
