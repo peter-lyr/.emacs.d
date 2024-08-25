@@ -228,3 +228,9 @@
 (if use-evil
     (evil-leader-set-key)
   )
+;; 保存历史记录
+(add-to-list 'savehist-additional-variables 'search-ring)
+(add-to-list 'savehist-additional-variables 'regexp-search-ring)
+(add-to-list 'savehist-additional-variables 'kill-ring)
+;; (setq savehist-autosave-interval 500) ;; 默认 500，需要在 (savehist-mode t) 之前设置，否则无效
+(savehist-mode t)
