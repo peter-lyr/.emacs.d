@@ -147,6 +147,7 @@
       (which-key-add-key-based-replacements "SPC n r" "note roam")
       (which-key-add-key-based-replacements "SPC n l" "note link")
       (which-key-add-key-based-replacements "SPC n h" "note heading")
+      (which-key-add-key-based-replacements "SPC n m" "note my")
       (which-key-add-key-based-replacements "SPC b" "buffer")
       )
   )
@@ -185,6 +186,8 @@
   (evil-leader/set-key-for-mode 'org-mode "nrl" 'org-roam-buffer-toggle)
   (evil-leader/set-key-for-mode 'org-mode "nrn" 'org-roam-node-find)
   (evil-leader/set-key-for-mode 'org-mode "nri" 'org-roam-node-insert)
+  ;; org my
+  (evil-leader/set-key-for-mode 'org-mode "nmc" 'org-add-custom-id-to-heading)
   ;; org roam ui
   (evil-leader/set-key-for-mode 'org-mode "nu" 'org-roam-ui-mode)
   ;; 窗口复制

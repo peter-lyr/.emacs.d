@@ -42,4 +42,19 @@
 ;;   (switch-to-buffer-window "*Test*")
 ;;   )
 
+;; (defun my/org-add-ids-to-headlines-in-file ()
+;;   "Add CUSTOM_ID properties to all headlines in the current file."
+;;   (interactive)
+;;   (org-map-entries
+;;    (lambda ()
+;;      (let ((custom-id (org-entry-get nil "CUSTOM_ID")))
+;;        (unless custom-id
+;;          (setq custom-id (org-id-new))
+;;          (org-entry-put nil "CUSTOM_ID" custom-id))))))
+;;
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (my/org-add-ids-to-headlines-in-file)
+;;             ))
+
 (provide 'init-test)
