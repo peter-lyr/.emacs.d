@@ -62,6 +62,7 @@
                    org-roam-ui-update-on-save t
                    org-roam-ui-open-on-start t))
 
+;; 不用evil时的按键映射
 (if (not use-evil)
   (progn
     (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
@@ -89,11 +90,12 @@
 ;; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
 
+;; 快速打开init.org
 (if (not use-evil)
   (global-set-key (kbd "C-x C-<return>") 'open-init-org)
   )
 
-;; DONE 表格对齐，增加上电时长
+;; orgmode的表格对齐
 (use-package valign
              :ensure t
              :config
