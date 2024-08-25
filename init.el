@@ -163,18 +163,18 @@
   (evil-define-key 'motion 'global (kbd "s") 'avy-goto-char)
   ;; dired
   (evil-leader/set-key "fj" 'dired-jump)
+  ;; 打开recentf
+  (evil-leader/set-key "fo" 'counsel-recentf)
   ;; 打开org文件
   (evil-leader/set-key "fi" 'open-init-org)
   (evil-leader/set-key "fw" 'open-work-org)
-  ;; 打开recentf
-  (evil-leader/set-key "fo" 'counsel-recentf)
   ;; org agenda
   (evil-leader/set-key-for-mode 'org-mode "no" 'org-agenda)
   (evil-leader/set-key-for-mode 'org-mode "na" 'org-agenda-list)
   (evil-leader/set-key-for-mode 'org-mode "nt" 'org-todo-list)
   ;; org roam
   (evil-leader/set-key-for-mode 'org-mode "nl" 'org-roam-buffer-toggle)
-  (evil-leader/set-key-for-mode 'org-mode "nf" 'org-roam-node-find)
+  (evil-leader/set-key-for-mode 'org-mode "nn" 'org-roam-node-find)
   (evil-leader/set-key-for-mode 'org-mode "ni" 'org-roam-node-insert)
   ;; org roam ui
   (evil-leader/set-key-for-mode 'org-mode "nu" 'org-roam-ui-mode)
