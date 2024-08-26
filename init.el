@@ -50,12 +50,12 @@
           "'" 'org-agenda-show-and-scroll-up
           "j" 'org-agenda-next-line
           "k" 'org-agenda-previous-line
-          "gw" 'org-agenda-week-view
-          "gm" 'org-agenda-month-view
-          "gy" 'org-agenda-year-view
-          "g." 'org-agenda-toggle-time-grid
-          "gt" 'org-agenda-goto-today
-          "gl" 'org-agenda-log-mode
+          ",w" 'org-agenda-week-view
+          ",m" 'org-agenda-month-view
+          ",y" 'org-agenda-year-view
+          ",." 'org-agenda-toggle-time-grid
+          ",t" 'org-agenda-goto-today
+          ",l" 'org-agenda-log-mode
           "f" 'org-agenda-later
           "b" 'org-agenda-earlier
           "n" 'org-agenda-add-note
