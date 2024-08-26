@@ -45,8 +45,7 @@
                       ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
                       :target (file+head
                                 "${slug}.org"
-                                "#+title: ${title}
-                                #+created: %<%Y/%m/%d %H:%M:%S>"
+                                "#+title: ${title}"
                                 )
                       :unnarrowed t)))
              (org-roam-db-autosync-mode)
