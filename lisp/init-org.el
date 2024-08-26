@@ -44,7 +44,7 @@
                    '(("d" "default" plain "%?"
                       ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
                       :target (file+head
-                                "${slug}.org"
+                                "%<%Y%m%d-%H%M%S>.org"
                                 "#+title: ${title}"
                                 )
                       :unnarrowed t)))
