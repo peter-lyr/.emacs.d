@@ -97,25 +97,25 @@
 
 ;; ivy查找文件
 (use-package ivy
-             :ensure t
-             :demand t
-             :diminish ivy-mode
-             :config
-             (ivy-mode 1)
-             (setq ivy-use-virtual-buffers t)
-             (setq enable-recursive-minibuffers t)
-             )
+  :ensure t
+  :demand t
+  :diminish ivy-mode
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  )
 (use-package counsel
-             :ensure t
-             :after ivy
-             :config
-             (counsel-mode 1)
-             )
+  :ensure t
+  :after ivy
+  :config
+  (counsel-mode 1)
+  )
 (use-package counsel-projectile
-             :ensure t
-             :config
-             (counsel-projectile-mode)
-             )
+  :ensure t
+  :config
+  (counsel-projectile-mode)
+  )
 
 ;; 代码格式化
 (use-package format-all
@@ -233,25 +233,26 @@
   ;; 窗口最大化和一样大
   (evil-leader/set-key "wm" 'zoom-window-zoom)
   (evil-leader/set-key "we" 'balance-windows)
+  ;; 代码格式化
+  (evil-leader/set-key "ff" 'format-code)
   ;; 回车键怎么能少得了呢
   ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
   (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
   ;; 一次跳5行
-  (define-key evil-motion-state-map (kbd "C-j") 'next-5-lines)
-  (define-key evil-motion-state-map (kbd "C-k") 'prev-5-lines)
   (evil-define-key 'normal org-mode-map (kbd "C-j") 'next-5-lines)
   (evil-define-key 'normal org-mode-map (kbd "C-k") 'prev-5-lines)
+  (define-key evil-motion-state-map (kbd "C-j") 'next-5-lines)
+  (define-key evil-motion-state-map (kbd "C-k") 'prev-5-lines)
   ;; zj/k
   (evil-define-key 'normal org-mode-map (kbd "zj") 'org-next-visible-heading)
   (evil-define-key 'normal org-mode-map (kbd "zk") 'org-previous-visible-heading)
-
-  (evil-leader/set-key "ff" 'format-code)
   )
 
 ;; 统一在这里设置按键映射
 (if use-evil
     (evil-leader-set-key)
   )
+
 ;; 保存历史记录
 (add-to-list 'savehist-additional-variables 'search-ring)
 (add-to-list 'savehist-additional-variables 'regexp-search-ring)
