@@ -239,8 +239,8 @@
   ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
   (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
   ;; 一次跳5行
-  (evil-define-key 'normal org-mode-map (kbd "C-j") 'next-5-lines)
-  (evil-define-key 'normal org-mode-map (kbd "C-k") 'prev-5-lines)
+  (evil-define-key '(normal insert) org-mode-map (kbd "C-j") 'next-5-lines)
+  (evil-define-key '(normal insert) org-mode-map (kbd "C-k") 'prev-5-lines)
   (define-key evil-motion-state-map (kbd "C-j") 'next-5-lines)
   (define-key evil-motion-state-map (kbd "C-k") 'prev-5-lines)
   ;; zj/k
