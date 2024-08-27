@@ -143,11 +143,13 @@
       (which-key-add-key-based-replacements "SPC w" "window")
       (which-key-add-key-based-replacements "SPC x" "window close")
       (which-key-add-key-based-replacements "SPC w s" "window split")
-      (which-key-add-key-based-replacements "SPC n" "note")
+      (which-key-add-key-based-replacements "SPC n" "note(org)")
       (which-key-add-key-based-replacements "SPC n r" "note roam")
       (which-key-add-key-based-replacements "SPC n l" "note link")
       (which-key-add-key-based-replacements "SPC n h" "note heading")
       (which-key-add-key-based-replacements "SPC n m" "note my")
+      (which-key-add-key-based-replacements "SPC n s" "note timestamp time")
+      (which-key-add-key-based-replacements "SPC n s d" "note timestamp date")
       (which-key-add-key-based-replacements "SPC b" "buffer")
       )
   )
@@ -172,6 +174,11 @@
   ;; 打开org文件
   (evil-leader/set-key "fi" 'open-init-org)
   (evil-leader/set-key "fw" 'open-work-org)
+  ;; org time stamp
+  (evil-leader/set-key-for-mode 'org-mode "nsi" 'my-org-time-stamp-inactive)
+  (evil-leader/set-key-for-mode 'org-mode "nsa" 'my-org-time-stamp-active)
+  (evil-leader/set-key-for-mode 'org-mode "nsdi" 'org-time-stamp-inactive)
+  (evil-leader/set-key-for-mode 'org-mode "nsda" 'org-time-stamp-active)
   ;; org store/insert link
   (evil-leader/set-key-for-mode 'org-mode "nls" 'org-store-link)
   (evil-leader/set-key-for-mode 'org-mode "nli" 'org-insert-link)

@@ -201,4 +201,23 @@
       (replace-match "" nil nil)))
   )
 
+(defun org-add-custom-id-to-heading ()
+  "Add a CUSTOM_ID property to the current heading."
+  (interactive)
+  (let ((custom-id (org-id-new)))
+    (org-entry-put nil "CUSTOM_ID" custom-id)
+    (message "Added CUSTOM_ID: %s" custom-id)))
+
+(defun my-org-time-stamp-active ()
+  "my-org-time-stamp-active"
+  (interactive)
+  (org-time-stamp-active 1)
+  )
+
+(defun my-org-time-stamp-inactive ()
+  "my-org-time-stamp-inactive"
+  (interactive)
+  (org-time-stamp-inactive 1)
+  )
+
 (provide 'init-funcs)

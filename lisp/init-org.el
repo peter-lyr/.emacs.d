@@ -94,13 +94,6 @@
   (global-set-key (kbd "C-x C-<return>") 'open-init-org)
   )
 
-(defun org-add-custom-id-to-heading ()
-  "Add a CUSTOM_ID property to the current heading."
-  (interactive)
-  (let ((custom-id (org-id-new)))
-    (org-entry-put nil "CUSTOM_ID" custom-id)
-    (message "Added CUSTOM_ID: %s" custom-id)))
-
 ;; orgmode的表格对齐
 (use-package valign
              :ensure t
