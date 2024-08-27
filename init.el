@@ -190,7 +190,7 @@
   (evil-leader/set-key-for-mode 'org-mode "na" 'org-agenda-list)
   (evil-leader/set-key-for-mode 'org-mode "nt" 'org-todo-list)
   ;; org roam
-  (evil-leader/set-key-for-mode 'org-mode "nrl" 'org-roam-buffer-toggle)
+  (evil-leader/set-key-for-mode 'org-mode "nrl" 'my-org-roam-buffer-toggle)
   (evil-leader/set-key-for-mode 'org-mode "nrn" 'org-roam-node-find)
   (evil-leader/set-key-for-mode 'org-mode "nri" 'org-roam-node-insert)
   ;; org my

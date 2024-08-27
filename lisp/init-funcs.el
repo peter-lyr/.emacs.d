@@ -220,4 +220,11 @@
   (org-time-stamp-inactive 1)
   )
 
+(defun my-org-roam-buffer-toggle ()
+  "my-org-roam-buffer-toggle"
+  (interactive)
+  (org-roam-buffer-toggle)
+  (switch-to-buffer-window "*org-roam*")
+  )
+
 (provide 'init-funcs)
