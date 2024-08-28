@@ -62,4 +62,18 @@
 ;; ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
 ;; (setq-default cursor-type 'bar))
 
+;; ;; 不用evil时的按键映射
+;; (if (not use-evil)
+;;     (progn
+;;       (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+;;       (global-set-key (kbd "C-c n f") 'org-roam-node-find)
+;;       (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+;;       )
+;;   )
+
+;; ;; 快速打开init.org
+;; (if (not use-evil)
+;;     (global-set-key (kbd "C-x C-<return>") 'open-init-org)
+;;   )
+
 (provide 'init-test)

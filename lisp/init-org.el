@@ -64,15 +64,6 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
-;; 不用evil时的按键映射
-(if (not use-evil)
-    (progn
-      (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
-      (global-set-key (kbd "C-c n f") 'org-roam-node-find)
-      (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
-      )
-  )
-
 ;; 把日志记录在LOGBOOK里
 (setq org-log-into-drawer t)
 
@@ -91,11 +82,6 @@
 ;; 关于org-agenda-files不能奏效的问题
 ;; https://emacs-china.org/t/org-agenda-files/25932
 (setq org-agenda-files (list "~/depei/repos/org/"))
-
-;; 快速打开init.org
-(if (not use-evil)
-    (global-set-key (kbd "C-x C-<return>") 'open-init-org)
-  )
 
 ;; orgmode的表格对齐
 (use-package valign
@@ -118,6 +104,7 @@
   )
 
 ;; org roam高级接口
-(use-package consult-org-roam :ensure t)
+(use-package consult-org-roam
+  :ensure t)
 
 (provide 'init-org)
