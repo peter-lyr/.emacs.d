@@ -176,7 +176,8 @@
   (evil-leader/set-key "fi" 'open-init-org)
   (evil-leader/set-key "fw" 'open-work-org)
   ;; org image
-  (evil-leader/set-key-for-mode 'org-mode "nii" 'org-toggle-inline-images)
+  (evil-leader/set-key-for-mode 'org-mode "n i SPC" 'org-toggle-inline-images)
+  (evil-leader/set-key-for-mode 'org-mode "nii" 'org-download-screenshot)
   ;; org time stamp
   (evil-leader/set-key-for-mode 'org-mode "nsi" 'my-org-time-stamp-inactive)
   (evil-leader/set-key-for-mode 'org-mode "nsa" 'my-org-time-stamp-active)

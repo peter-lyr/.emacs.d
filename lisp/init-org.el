@@ -104,4 +104,16 @@
   (setq valign-fancy-bar t)
   (add-hook 'org-mode-hook #'valign-mode))
 
+(use-package org-download
+  :ensure t
+  :config
+  (setq-default org-download-heading-lvl nil)
+  (setq-default org-download-image-dir "~/depei/repos/org/images")
+  (setq org-download-abbreviate-filename-function (lambda (fn) fn)) ; use original filename
+  (defun dummy-org-download-annotate-function (link) "")
+  (setq org-download-annotate-function #'dummy-org-download-annotate-function)
+  (setq org-download-screenshot-method "powershell -c Add-Type -AssemblyName System.Windows.Forms;$image = [Windows.Forms.Clipboard]::GetImage();$image.Save('%s', [System.Drawing.Imaging.ImageFormat]::Png)")
+  (setq org-download-abbreviate-filename-function 'file-relative-name)
+  )
+
 (provide 'init-org)
