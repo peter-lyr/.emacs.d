@@ -57,4 +57,9 @@
 ;;             (my/org-add-ids-to-headlines-in-file)
 ;;             ))
 
+;; ;; 不用evil
+;; ;; emacs 改变光标形状
+;; ;; http://blog.chinaunix.net/uid-20609878-id-1915848.html
+;; (setq-default cursor-type 'bar))
+
 (provide 'init-test)
