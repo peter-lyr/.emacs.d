@@ -118,7 +118,6 @@
   )
 
 ;; org roam高级接口
-(use-package consult-org-roam
-             :ensure t)
+(use-package consult-org-roam :ensure t)
 
 (provide 'init-org)
