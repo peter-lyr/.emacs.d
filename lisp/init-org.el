@@ -1,14 +1,17 @@
 ;; Change the asterisk (heading identifier) to some other symbol in Org mode
 (use-package org-bullets
-             :ensure t
-             :config
-             (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-             )
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 
 ;; Org文件以指定的目录深度打开 startup:show2levels
 ;; #+STARTUP: overview
 ;; https://emacs-china.org/t/org-startup-show2levels/16499
 (setq org-startup-folded 'show-everything)
+
+;; 启动时就生效图片
+(setq org-startup-with-inline-images t)
 
 ;; #+STARTUP: indent
 ;; https://www.wenhui.space/docs/02-emacs/emacs_org_mode/
@@ -17,16 +20,16 @@
 ;; https://ccdevote.github.io/技术博客/org-mode-basic-4.html
 ;; #+TODO: TODO(t) SCH(s) WAIT(w) | DONE(d) CANCELLED(c)
 (setq org-todo-keywords '((sequence
-                            "GATHER(g@)"
-                            "NEXT(n@)"
-                            "LATER(l@)"
-                            "WAIT(w@)"
-                            "MAYBE(m@)"
-                            "|"
-                            "DONE(d@)"
-                            "CANCELLED(c@)"
-                            "ARCHIVE(a@)"
-                            )))
+                           "GATHER(g@)"
+                           "NEXT(n@)"
+                           "LATER(l@)"
+                           "WAIT(w@)"
+                           "MAYBE(m@)"
+                           "|"
+                           "DONE(d@)"
+                           "CANCELLED(c@)"
+                           "ARCHIVE(a@)"
+                           )))
 
 ;; 几个常用按键映射
 (global-set-key (kbd "C-c l") #'org-store-link)
@@ -35,39 +38,39 @@
 
 ;; org-roam
 (use-package org-roam
-             :ensure t
-             :custom
-             (org-roam-directory (file-truename "~/depei/repos/org/"))
-             :config
-             (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
-             (setq org-roam-capture-templates
-                   '(("d" "default" plain "%?"
-                      ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
-                      :target (file+head
-                                "%<%Y%m%d-%H%M%S>.org"
-                                "#+title: ${title}"
-                                )
-                      :unnarrowed t)))
-             (org-roam-db-autosync-mode)
-             (require 'org-roam-protocol))
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/depei/repos/org/"))
+  :config
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
+  (setq org-roam-capture-templates
+        '(("d" "default" plain "%?"
+           ;; :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+           :target (file+head
+                    "%<%Y%m%d-%H%M%S>.org"
+                    "#+title: ${title}"
+                    )
+           :unnarrowed t)))
+  (org-roam-db-autosync-mode)
+  (require 'org-roam-protocol))
 
 ;; org-roam-ui
 (use-package org-roam-ui
-             :ensure t
-             :after org-roam
-             :config
-             (setq org-roam-ui-sync-theme t
-                   org-roam-ui-follow t
-                   org-roam-ui-update-on-save t
-                   org-roam-ui-open-on-start t))
+  :ensure t
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 ;; 不用evil时的按键映射
 (if (not use-evil)
-  (progn
-    (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
-    (global-set-key (kbd "C-c n f") 'org-roam-node-find)
-    (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
-    )
+    (progn
+      (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+      (global-set-key (kbd "C-c n f") 'org-roam-node-find)
+      (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+      )
   )
 
 ;; 把日志记录在LOGBOOK里
@@ -91,14 +94,14 @@
 
 ;; 快速打开init.org
 (if (not use-evil)
-  (global-set-key (kbd "C-x C-<return>") 'open-init-org)
+    (global-set-key (kbd "C-x C-<return>") 'open-init-org)
   )
 
 ;; orgmode的表格对齐
 (use-package valign
-             :ensure t
-             :config
-             (setq valign-fancy-bar t)
-             (add-hook 'org-mode-hook #'valign-mode))
+  :ensure t
+  :config
+  (setq valign-fancy-bar t)
+  (add-hook 'org-mode-hook #'valign-mode))
 
 (provide 'init-org)
