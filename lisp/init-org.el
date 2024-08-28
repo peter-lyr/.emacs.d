@@ -104,6 +104,7 @@
   (setq valign-fancy-bar t)
   (add-hook 'org-mode-hook #'valign-mode))
 
+;; org插入图片
 (use-package org-download
   :ensure t
   :config
@@ -115,5 +116,9 @@
   (setq org-download-screenshot-method "powershell -c Add-Type -AssemblyName System.Windows.Forms;$image = [Windows.Forms.Clipboard]::GetImage();$image.Save('%s', [System.Drawing.Imaging.ImageFormat]::Png)")
   (setq org-download-abbreviate-filename-function 'file-relative-name)
   )
+
+;; org roam高级接口
+(use-package consult-org-roam
+             :ensure t)
 
 (provide 'init-org)
