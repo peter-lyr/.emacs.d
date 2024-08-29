@@ -241,7 +241,8 @@
 (evil-leader/set-key "wm" 'zoom-window-zoom)
 (evil-leader/set-key "we" 'balance-windows)
 ;; 代码格式化
-(evil-leader/set-key "ff" 'format-code)
+(evil-leader/set-key "ff" 'my-format-code)
+(evil-define-key 'normal org-mode-map (kbd "SPC f f") 'my-format-code)
 ;; 回车键怎么能少得了呢
 ;; spacemacs\layers\+spacemacs\spacemacs-org\packages.el #61
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)

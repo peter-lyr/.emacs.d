@@ -194,11 +194,13 @@
 (defun my-format-code ()
   "Format code and Remove trailing whitespace in the current buffer."
   (interactive)
-  (format-code)
   (save-excursion
     (goto-char (point-min))
     (while (re-search-forward "[ \t]+$" nil t)
       (replace-match "" nil nil)))
+  (if (eq major-mode 'emacs-lisp-mode)
+      (format-code)
+    )
   )
 
 (defun org-add-custom-id-to-heading ()
