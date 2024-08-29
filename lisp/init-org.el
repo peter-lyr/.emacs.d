@@ -100,7 +100,7 @@
   (defun dummy-org-download-annotate-function (link) "")
   (setq org-download-annotate-function #'dummy-org-download-annotate-function)
   (setq org-download-screenshot-method "powershell -c Add-Type -AssemblyName System.Windows.Forms;$image = [Windows.Forms.Clipboard]::GetImage();$image.Save('%s', [System.Drawing.Imaging.ImageFormat]::Png)")
-  (setq org-download-abbreviate-filename-function 'file-relative-name)
+  (setq org-download-abbreviate-filename-function 'abbreviate-file-name)
   )
 
 ;; org roam高级接口
