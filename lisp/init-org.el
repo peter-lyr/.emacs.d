@@ -95,7 +95,7 @@
   :ensure t
   :config
   (setq-default org-download-heading-lvl nil)
-  (setq-default org-download-image-dir "~/depei/repos/org/images")
+  (setq-default org-download-image-dir "~/depei/repos/org/data/images")
   (setq org-download-abbreviate-filename-function (lambda (fn) fn)) ; use original filename
   (defun dummy-org-download-annotate-function (link) "")
   (setq org-download-annotate-function #'dummy-org-download-annotate-function)
