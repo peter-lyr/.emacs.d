@@ -238,7 +238,9 @@
 ;; 重新刷新package-archive-contents
 (evil-leader/set-key "frp" 'refresh-package-archive-contents)
 ;; 窗口最大化和一样大
-(evil-leader/set-key "wm" 'zoom-window-zoom)
+(evil-leader/set-key "wz" 'zoom-window-zoom)
+(evil-leader/set-key "wm" 'evil-window-set-height)
+(evil-leader/set-key "w," 'evil-window-set-width)
 (evil-leader/set-key "we" 'balance-windows)
 ;; 代码格式化
 (evil-leader/set-key "ff" 'my-format-code)
