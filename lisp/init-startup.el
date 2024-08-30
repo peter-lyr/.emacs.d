@@ -93,19 +93,20 @@
 ;; 不要使用制表符
 (setq-default indent-tabs-mode nil)
 
-;; 失去emacs焦点时切换回搜狗输入法
-(add-hook 'focus-out-hook
-          (lambda ()
-            (switch-input-method-to-zh)
-            ))
-
-;; 获取emacs焦点时判断设为和输入法
-(add-hook 'focus-in-hook
-          (lambda ()
-            (if (eq evil-state 'insert)
-                (switch-input-method-to-zh)
-              (switch-input-method-to-en)
-              )
-            ))
+;; 失去、获取emacs焦点时，不在emacs配置里切换输入法了，计划放到mouse里
+;; ;; 失去emacs焦点时切换回搜狗输入法
+;; (add-hook 'focus-out-hook
+;;           (lambda ()
+;;             (switch-input-method-to-zh)
+;;             ))
+;;
+;; ;; 获取emacs焦点时判断设为和输入法
+;; (add-hook 'focus-in-hook
+;;           (lambda ()
+;;             (if (eq evil-state 'insert)
+;;                 (switch-input-method-to-zh)
+;;               (switch-input-method-to-en)
+;;               )
+;;             ))
 
 (provide 'init-startup)
