@@ -180,9 +180,9 @@
 (evil-leader/set-key-for-mode 'org-mode "nii" 'org-download-screenshot)
 ;; org time stamp
 (evil-leader/set-key-for-mode 'org-mode "nsi" 'my-org-time-stamp-inactive)
-(evil-leader/set-key-for-mode 'org-mode "nsa" 'my-org-time-stamp-active)
+(evil-leader/set-key-for-mode 'org-mode "nsa" 'my-org-time-stamp)
 (evil-leader/set-key-for-mode 'org-mode "nsdi" 'org-time-stamp-inactive)
-(evil-leader/set-key-for-mode 'org-mode "nsda" 'org-time-stamp-active)
+(evil-leader/set-key-for-mode 'org-mode "nsda" 'org-time-stamp)
 ;; org store/insert link
 (evil-leader/set-key-for-mode 'org-mode "n l SPC" 'org-toggle-link-display)
 (evil-leader/set-key-for-mode 'org-mode "nls" 'org-store-link)

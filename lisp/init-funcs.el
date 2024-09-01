@@ -210,10 +210,10 @@
     (org-entry-put nil "CUSTOM_ID" custom-id)
     (message "Added CUSTOM_ID: %s" custom-id)))
 
-(defun my-org-time-stamp-active ()
-  "my-org-time-stamp-active"
+(defun my-org-time-stamp ()
+  "my-org-time-stamp"
   (interactive)
-  (org-time-stamp-active 1)
+  (org-time-stamp 1)
   )
 
 (defun my-org-time-stamp-inactive ()
