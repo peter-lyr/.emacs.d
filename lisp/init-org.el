@@ -43,6 +43,7 @@
   :custom
   (org-roam-directory (file-truename "~/depei/repos/org/"))
   (org-roam-dailies-directory (file-truename "~/depei/repos/org/journal"))
+  (setq org-roam-file-exclude-regexp '("journal" "data"))
   (org-roam-complete-everywhere t)
   :config
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
