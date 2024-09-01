@@ -96,16 +96,18 @@
 ;; 不要使用制表符
 (setq-default indent-tabs-mode nil)
 
-(defun my-write (log-message log-file)
-  "Add a given message string to the end of a file."
+(defun my-write (text file)
+  "Write text to file"
   (interactive)
-  (write-region log-message nil log-file))
+  (let ((inhibit-message t)
+        (message-log-max nil))
+    (write-region text nil file)))
 
 ;; 失去emacs焦点时写个管道参数给mouse
 (add-hook 'focus-out-hook
           (lambda ()
             (if (eq evil-state 'insert)
-              (my-write "1" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
+                (my-write "1" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
               (my-write "0" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
               )
             ))
