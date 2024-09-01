@@ -145,6 +145,7 @@
       (which-key-add-key-based-replacements "SPC n h" "note heading")
       (which-key-add-key-based-replacements "SPC n m" "note my")
       (which-key-add-key-based-replacements "SPC n i" "note image")
+      (which-key-add-key-based-replacements "SPC n j" "note journal")
       (which-key-add-key-based-replacements "SPC n c" "note consult")
       (which-key-add-key-based-replacements "SPC n s" "note timestamp time")
       (which-key-add-key-based-replacements "SPC n s d" "note timestamp date")
@@ -175,6 +176,15 @@
 ;; 打开org文件
 (evil-leader/set-key "fi" 'open-init-org)
 (evil-leader/set-key "fw" 'open-work-org)
+;; org journal
+(evil-leader/set-key "n j SPC" 'org-roam-dailies-goto-today)
+(evil-leader/set-key "n j h" 'org-roam-dailies-goto-yestoday)
+(evil-leader/set-key "n j l" 'org-roam-dailies-goto-tomorrow)
+(evil-leader/set-key "n j j" 'org-roam-dailies-find-directory)
+(evil-leader/set-key "n j RET" 'org-roam-dailies-capture-today)
+(evil-leader/set-key "n j c SPC" 'org-roam-dailies-capture-today)
+(evil-leader/set-key "n j c h" 'org-roam-dailies-capture-yestoday)
+(evil-leader/set-key "n j c l" 'org-roam-dailies-capture-tomorrow)
 ;; org image
 (evil-leader/set-key-for-mode 'org-mode "n i SPC" 'org-toggle-inline-images)
 (evil-leader/set-key-for-mode 'org-mode "nii" 'org-download-screenshot)

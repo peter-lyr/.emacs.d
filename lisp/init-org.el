@@ -38,8 +38,12 @@
 ;; org-roam
 (use-package org-roam
   :ensure t
+  :init
+  (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory (file-truename "~/depei/repos/org/"))
+  (org-roam-dailies-directory (file-truename "~/depei/repos/org/journal"))
+  (org-roam-complete-everywhere t)
   :config
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag)))
   (setq org-roam-capture-templates
@@ -51,6 +55,7 @@
                     )
            :unnarrowed t)))
   (org-roam-db-autosync-mode)
+  (require 'org-roam-dailies)
   (require 'org-roam-protocol))
 
 ;; org-roam-ui
