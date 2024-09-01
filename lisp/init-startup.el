@@ -75,6 +75,10 @@
 (use-package restart-emacs
   :ensure t)
 
+(defun save-all-unsaved-and-quit()
+  (interactive)
+  (save-all-unsaved)
+  (evil-quit-all-with-error-code t))
 ;; emacs重启
 (defun my-restart-emacs()
   (interactive)
