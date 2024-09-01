@@ -96,20 +96,18 @@
 ;; 不要使用制表符
 (setq-default indent-tabs-mode nil)
 
-;; 失去、获取emacs焦点时，不在emacs配置里切换输入法了，计划放到mouse里
-;; ;; 失去emacs焦点时切换回搜狗输入法
-;; (add-hook 'focus-out-hook
-;;           (lambda ()
-;;             (switch-input-method-to-zh)
-;;             ))
-;;
-;; ;; 获取emacs焦点时判断设为和输入法
-;; (add-hook 'focus-in-hook
-;;           (lambda ()
-;;             (if (eq evil-state 'insert)
-;;                 (switch-input-method-to-zh)
-;;               (switch-input-method-to-en)
-;;               )
-;;             ))
+(defun my-write (log-message log-file)
+  "Add a given message string to the end of a file."
+  (interactive)
+  (write-region log-message nil log-file))
+
+;; 失去emacs焦点时写个管道参数给mouse
+(add-hook 'focus-out-hook
+          (lambda ()
+            (if (eq evil-state 'insert)
+              (my-write "1" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
+              (my-write "0" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
+              )
+            ))
 
 (provide 'init-startup)
