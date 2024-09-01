@@ -79,7 +79,8 @@
 (defun my-restart-emacs()
   (interactive)
   (restart-emacs-start-new-emacs)
-  (save-buffers-kill-terminal))
+  (save-all-unsaved)
+  (evil-quit-all-with-error-code t))
 (global-set-key (kbd "C-x C-<delete>") 'my-restart-emacs) ;; 以防有时evil死掉了
 
 ;; 自动补全括号
