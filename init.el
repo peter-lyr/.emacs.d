@@ -184,6 +184,7 @@
 (evil-leader/set-key-for-mode 'org-mode "nsdi" 'org-time-stamp-inactive)
 (evil-leader/set-key-for-mode 'org-mode "nsda" 'org-time-stamp-active)
 ;; org store/insert link
+(evil-leader/set-key-for-mode 'org-mode "n l SPC" 'org-toggle-link-display)
 (evil-leader/set-key-for-mode 'org-mode "nls" 'org-store-link)
 (evil-leader/set-key-for-mode 'org-mode "nli" 'org-insert-link)
 ;; org find headings
