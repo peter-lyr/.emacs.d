@@ -65,7 +65,7 @@
   :config
   (pdf-tools-install)
   (setq-default pdf-view-display-size 'fit-width)
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode t)))
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
   :custom
   (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
 
