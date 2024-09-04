@@ -59,6 +59,16 @@
   (require 'org-roam-dailies)
   (require 'org-roam-protocol))
 
+;; pdf-tools
+(use-package pdf-tools
+  :ensure t
+  :config
+  (pdf-tools-install)
+  (setq-default pdf-view-display-size 'fit-width)
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode t)))
+  :custom
+  (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
+
 ;; org-roam-ui
 (use-package org-roam-ui
   :ensure t
