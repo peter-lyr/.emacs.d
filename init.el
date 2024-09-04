@@ -1,4 +1,5 @@
 (require 'package)
+(setq package-check-signature nil)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
