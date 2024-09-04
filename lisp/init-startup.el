@@ -54,10 +54,17 @@
 
 ;; 编码系统
 ;; 解决每次退出都要提示一次，要按好多次才能退出的问题
+;; (prefer-coding-system 'utf-8)
+;; (set-default-coding-systems 'utf-8)
+;; (set-language-environment 'utf-8)
+;; (set-selection-coding-system 'utf-8)
+
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+;;(set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-language-environment 'utf-8)
-(set-selection-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
 
 ;; ;; 报错日志
 ;; (setq debug-on-error t)
@@ -116,5 +123,8 @@
               (my-write "0" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
               )
             ))
+
+;; 不要响铃警告
+(setq ring-bell-function 'ignore)
 
 (provide 'init-startup)
