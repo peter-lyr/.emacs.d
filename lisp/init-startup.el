@@ -127,4 +127,7 @@
 ;; 不要响铃警告
 (setq ring-bell-function 'ignore)
 
+;; 下划线昨晚单词的一部分
+(modify-syntax-entry ?_ "w")
+
 (provide 'init-startup)
