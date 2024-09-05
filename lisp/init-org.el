@@ -73,6 +73,10 @@
   :custom
   (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
 
+(use-package org-noter
+  :ensure t
+  )
+
 ;; org-roam-ui
 (use-package org-roam-ui
   :ensure t
