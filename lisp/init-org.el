@@ -1,4 +1,4 @@
-;; Change the asterisk (heading identifier) to some other symbol in Org mode
+;; Change the astekisk (heading identifier) to some other symbol in Org mode
 (use-package org-bullets
   :ensure t
   :config
@@ -65,7 +65,11 @@
   :config
   (pdf-tools-install)
   (setq-default pdf-view-display-size 'fit-width)
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
+  (add-hook 'pdf-view-mode-hook
+            (lambda ()
+              (display-line-numbers-mode -1)
+              (pdf-view-fit-height-to-window)
+              ))
   :custom
   (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
 
