@@ -166,6 +166,8 @@
 ;; 打开init.el文件
 (evil-leader/set-key "fei" 'open-init-el)
 (evil-leader/set-key "feo" 'open-init-org-el)
+(evil-leader/set-key "fes" 'open-init-startup-el)
+(evil-leader/set-key "fef" 'open-init-funcs-el)
 ;; 查找文件
 (evil-leader/set-key "SPC" 'counsel-projectile-find-file)
 ;; 复制文件路径

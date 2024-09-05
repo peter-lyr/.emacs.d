@@ -80,6 +80,18 @@
   (find-file "~/.emacs.d/lisp/init-org.el")
   )
 
+(defun open-init-startup-el ()
+  "打开init-startup.el"
+  (interactive)
+  (find-file "~/.emacs.d/lisp/init-startup.el")
+  )
+
+(defun open-init-funcs-el ()
+  "打开init-funcs.el"
+  (interactive)
+  (find-file "~/.emacs.d/lisp/init-funcs.el")
+  )
+
 (defun open-init-org()
   "上电打开init.org文件"
   (interactive)
