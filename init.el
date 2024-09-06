@@ -32,6 +32,12 @@
   ;; 切换输入法
   (add-hook 'evil-insert-state-exit-hook 'exit-insert-mode-hook)
   (add-hook 'evil-insert-state-entry-hook 'enter-insert-mode-hook)
+  (add-hook 'minibuffer-mode-hook 'enter-minibuffer-mode-hook)
+  (add-hook 'minibuffer-exit-hook 'exit-minibuffer-mode-hook)
+  (add-hook 'isearch-mode-hook 'enter-isearch-mode-hook)
+  (add-hook 'isearch-mode-end-hook 'exit-isearch-mode-hook)
+  (add-hook 'evil-replace-state-entry-hook 'enter-replace-mode-hook)
+  (add-hook 'evil-replace-state-exit-hook 'exit-replace-mode-hook)
   )
 
 ;; vi的leader

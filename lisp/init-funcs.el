@@ -173,6 +173,49 @@
   (switch-input-method-to-zh)
   )
 
+(defun enter-isearch-mode-hook ()
+  "enter-isearch-mode-hook"
+  (switch-input-method-to-zh)
+  )
+
+(defun check-input-method ()
+  "check-input-method"
+  (if (eq evil-state 'insert)
+      (switch-input-method-to-zh)
+    (switch-input-method-to-en)
+    )
+  )
+
+(defun check-input-method-later ()
+  "check-input-method-later"
+  (run-with-timer 0.01 nil 'check-input-method)
+  )
+
+(defun exit-isearch-mode-hook ()
+  "exit-isearch-mode-hook"
+  (check-input-method-later)
+  )
+
+(defun enter-minibuffer-mode-hook ()
+  "enter-minibuffer-mode-hook"
+  (switch-input-method-to-zh)
+  )
+
+(defun exit-minibuffer-mode-hook ()
+  "exit-minibuffer-mode-hook"
+  (check-input-method-later)
+  )
+
+(defun enter-replace-mode-hook ()
+  "enter-replace-mode-hook"
+  (switch-input-method-to-zh)
+  )
+
+(defun exit-replace-mode-hook ()
+  "exit-replace-mode-hook"
+  (switch-input-method-to-en)
+  )
+
 (defun go-buffer-messages ()
   "go *Messages* buffer"
   (interactive)
