@@ -294,3 +294,6 @@
 (add-to-list 'savehist-additional-variables 'kill-ring)
 ;; (setq savehist-autosave-interval 500) ;; 默认 500，需要在 (savehist-mode t) 之前设置，否则无效
 (savehist-mode t)
+
+;; 最大化emacs
+(start-process "winmaxemacs" nil "winmaxemacs.exe")
