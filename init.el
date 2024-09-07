@@ -295,5 +295,5 @@
 ;; (setq savehist-autosave-interval 500) ;; 默认 500，需要在 (savehist-mode t) 之前设置，否则无效
 (savehist-mode t)
 
-;; 最大化emacs
+;; 最大化emacs，在mouse仓库里找.winmaxemacs.ahk
 (start-process "winmaxemacs" nil "winmaxemacs.exe")
