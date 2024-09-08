@@ -281,8 +281,10 @@
 (evil-define-key 'normal org-mode-map (kbd "zj") 'org-next-visible-heading)
 (evil-define-key 'normal org-mode-map (kbd "zk") 'org-previous-visible-heading)
 ;; pdf-tools
-(evil-define-key 'normal pdf-view-mode-map (kbd "v") 'pdf-history-backward)
-(evil-define-key 'normal pdf-view-mode-map (kbd "b") 'pdf-history-forward)
+;; C-o C-i
+;; (evil-define-key 'normal pdf-view-mode-map (kbd "v") 'pdf-history-backward)
+;; (evil-define-key 'normal pdf-view-mode-map (kbd "b") 'pdf-history-forward)
+(evil-define-key 'normal pdf-view-mode-map (kbd "RET") 'pdf-occur)
 
 ;; ================================================================
 ;; 其他设置
