@@ -78,6 +78,9 @@
 
 (use-package org-noter
   :ensure t
+  :config
+  (setq org-noter-highlight-selected-text t)
+  (setq org-noter-notes-search-path '("~/DEPEI/Repos/org/data/pdf-noters/"))
   )
 
 ;; org-roam-ui
