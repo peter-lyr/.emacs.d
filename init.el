@@ -285,6 +285,7 @@
 ;; (evil-define-key 'normal pdf-view-mode-map (kbd "v") 'pdf-history-backward)
 ;; (evil-define-key 'normal pdf-view-mode-map (kbd "b") 'pdf-history-forward)
 (evil-define-key 'normal pdf-view-mode-map (kbd "RET") 'pdf-occur)
+(evil-define-key 'normal pdf-view-mode-map (kbd "i") 'org-noter-insert-note)
 
 ;; ================================================================
 ;; 其他设置
