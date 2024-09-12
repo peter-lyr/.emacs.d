@@ -5,6 +5,9 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   )
 
+;; emacs org的#+begin_src内部按下TAB键为什么会添加一个缩进，如何取消呢？
+(setq org-src-tab-acts-natively nil)
+
 ;; Org文件以指定的目录深度打开 startup:show2levels
 ;; #+STARTUP: overview
 ;; https://emacs-china.org/t/org-startup-show2levels/16499
