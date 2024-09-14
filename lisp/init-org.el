@@ -83,7 +83,7 @@
   (setq org-noter-auto-save-last-location t)
   (setq org-noter-max-short-selected-text-length 20) ;; 默认为 80
   (setq org-noter-notes-search-path '("~/DEPEI/Repos/org/data/pdf-noters/"))
-  (org-noter-default-heading-title "第 $p$ 页的笔记") ;; 默认短标题格式
+  (setq org-noter-default-heading-title "第 $p$ 页的笔记") ;; 默认短标题格式
   )
 
 ;; org-roam-ui
