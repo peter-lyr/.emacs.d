@@ -95,12 +95,12 @@
 (defun open-init-org()
   "上电打开init.org文件"
   (interactive)
-  (find-file "~/depei/repos/org/init.org"))
+  (find-file "~/org/init.org"))
 
 (defun open-work-org()
   "上电打开work.org文件"
   (interactive)
-  (find-file "~/depei/repos/org/work.org"))
+  (find-file "~/org/work.org"))
 
 (defun refresh-package-archive-contents ()
   "重新刷新package-archive-contents"
