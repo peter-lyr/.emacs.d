@@ -44,8 +44,8 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory (file-truename "~/depei/repos/org/"))
-  (org-roam-dailies-directory (file-truename "~/depei/repos/org/journal"))
+  (org-roam-directory (file-truename "~/org/"))
+  (org-roam-dailies-directory (file-truename "~/org/journal"))
   (org-roam-complete-everywhere t)
   :config
   (setq org-roam-file-exclude-regexp '("journal" "data"))
@@ -82,7 +82,7 @@
   (setq org-noter-highlight-selected-text t)
   (setq org-noter-auto-save-last-location t)
   (setq org-noter-max-short-selected-text-length 20) ;; 默认为 80
-  (setq org-noter-notes-search-path '("~/DEPEI/Repos/org/data/pdf-noters/"))
+  (setq org-noter-notes-search-path '("~/org/data/pdf-noters/"))
   (setq org-noter-default-heading-title "第 $p$ 页的笔记") ;; 默认短标题格式
   )
 
@@ -113,7 +113,7 @@
 
 ;; 关于org-agenda-files不能奏效的问题
 ;; https://emacs-china.org/t/org-agenda-files/25932
-(setq org-agenda-files (list "~/depei/repos/org/"))
+(setq org-agenda-files (list "~/org/"))
 
 ;; orgmode的表格对齐
 (use-package valign
@@ -127,7 +127,7 @@
   :ensure t
   :config
   (setq-default org-download-heading-lvl nil)
-  (setq-default org-download-image-dir "~/depei/repos/org/data/images")
+  (setq-default org-download-image-dir "~/org/data/images")
   (setq org-download-abbreviate-filename-function (lambda (fn) fn)) ; use original filename
   (defun dummy-org-download-annotate-function (link) "")
   (setq org-download-annotate-function #'dummy-org-download-annotate-function)
