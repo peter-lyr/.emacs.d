@@ -44,7 +44,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory (file-truename "~/org/"))
+  (org-roam-directory (file-truename "~/org/note"))
   (org-roam-dailies-directory (file-truename "~/org/journal"))
   (org-roam-complete-everywhere t)
   :config
@@ -113,7 +113,7 @@
 
 ;; 关于org-agenda-files不能奏效的问题
 ;; https://emacs-china.org/t/org-agenda-files/25932
-(setq org-agenda-files (list "~/org/"))
+(setq org-agenda-files (list "~/org/note/"))
 
 ;; orgmode的表格对齐
 (use-package valign
