@@ -299,4 +299,4 @@
 (savehist-mode t)
 
 ;; 最大化emacs，在mouse仓库里找.winmaxemacs.ahk
-(start-process "winmaxemacs" nil "winmaxemacs.exe")
+(start-process "winmaxemacs" nil "~/.emacs.d/winmaxemacs.exe")
