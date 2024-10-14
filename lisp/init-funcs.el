@@ -2,7 +2,7 @@
 (setq lisp-dir (format "%slisp/" dot-emacs-dot-d))
 ;; (setq input-method-py (format "%sinput-method.py" lisp-dir))
 
-(setq py-observer-dir "~/Dp/temp/py-observer")
+(setq py-observer-dir "~/Dp/temp/py-input-method")
 (setq emacs-focus-lost-gained-txt (format "%s/emacs-focus-lost-gained.txt" py-observer-dir))
 (setq emacs-lang-en-zh-txt (format "%s/emacs-lang-en-zh.txt" py-observer-dir))
 
