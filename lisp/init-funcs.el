@@ -1,6 +1,10 @@
 (setq dot-emacs-dot-d (file-name-directory user-init-file))
 (setq lisp-dir (format "%slisp/" dot-emacs-dot-d))
-(setq input-method-py (format "%sinput-method.py" lisp-dir))
+;; (setq input-method-py (format "%sinput-method.py" lisp-dir))
+
+(setq py-observer-dir "~/Dp/temp/py-observer")
+(setq emacs-focus-lost-gained-txt (format "%s/emacs-focus-lost-gained.txt" py-observer-dir))
+(setq emacs-lang-en-zh-txt (format "%s/emacs-lang-en-zh.txt" py-observer-dir))
 
 (defun prev-5-lines ()
   "向上移动5行"
@@ -138,29 +142,29 @@
       (prolog-indent-buffer)
     (format-all-buffer)))
 
-(defun switch-input-method (lang)
-  "switch input method, LANG: ZH or EN"
-  ;; ;; 不输出执行结果
-  ;; ;; 这个会阻塞emacs
-  ;; (let ((inhibit-message t)
-  ;;       (message-log-max nil))
-  ;;   (shell-command (format "python %s %s" input-method-py lang)))
-  ;; 输出执行结构到buffer
-  ;; (start-process "python-switch-input-method" "*Python Output*" "python" input-method-py lang)
-  ;; 不输出执行结构到buffer
-  (start-process "python-switch-input-method" nil "python" input-method-py lang)
-  )
+;; (defun switch-input-method (lang)
+;;   "switch input method, LANG: ZH or EN"
+;;   ;; ;; 不输出执行结果
+;;   ;; ;; 这个会阻塞emacs
+;;   ;; (let ((inhibit-message t)
+;;   ;;       (message-log-max nil))
+;;   ;;   (shell-command (format "python %s %s" input-method-py lang)))
+;;   ;; 输出执行结构到buffer
+;;   ;; (start-process "python-switch-input-method" "*Python Output*" "python" input-method-py lang)
+;;   ;; 不输出执行结构到buffer
+;;   ;; (start-process "python-switch-input-method" nil "python" input-method-py lang)
+;;   )
 
 (defun switch-input-method-to-zh ()
   "switch input method to ZH(搜狗)"
   (interactive)
-  (switch-input-method "ZH")
+  (my-write "1" emacs-lang-en-zh-txt)
   )
 
 (defun switch-input-method-to-en ()
   "switch input method to EN(US)"
   (interactive)
-  (switch-input-method "EN")
+  (my-write "0" emacs-lang-en-zh-txt)
   )
 
 (defun exit-insert-mode-hook ()

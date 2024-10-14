@@ -115,13 +115,14 @@
         (message-log-max nil))
     (write-region text nil file)))
 
-;; 失去emacs焦点时写个管道参数给mouse
 (add-hook 'focus-out-hook
           (lambda ()
-            (if (eq evil-state 'insert)
-                (my-write "1" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
-              (my-write "0" "C:\\Windows\\Temp\\emacs.exe-input-method.txt")
-              )
+            (my-write "0" emacs-focus-lost-gained-txt)
+            ))
+
+(add-hook 'focus-in-hook
+          (lambda ()
+            (my-write "1" emacs-focus-lost-gained-txt)
             ))
 
 ;; 不要响铃警告
