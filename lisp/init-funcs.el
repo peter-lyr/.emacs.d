@@ -288,4 +288,15 @@
   (switch-to-buffer-window "*org-roam*")
   )
 
+(defun open-in-nvim-qt ()
+  "open-in-nvim-qt"
+  (interactive)
+  (let ((name (if (eq major-mode 'dired-mode)
+                (dired-get-filename)
+                (or (buffer-file-name) ""))))
+    (when name
+      (kill-new name)
+      (start-process "openinnivmqt" nil "~/.emacs.d/openinnivmqt.exe")
+      )))
+
 (provide 'init-funcs)

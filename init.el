@@ -178,6 +178,8 @@
 (evil-leader/set-key "SPC" 'counsel-projectile-find-file)
 ;; 复制文件路径
 (evil-leader/set-key "fy" 'copy-buffer-file-name)
+;; 在nvim-qt打开当前文件
+(evil-leader/set-key "o" 'open-in-nvim-qt)
 ;; avy
 (evil-leader/set-key "s" 'avy-goto-char)
 ;; (evil-define-key 'normal org-mode-map (kbd "s") 'avy-goto-char)
