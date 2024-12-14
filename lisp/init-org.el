@@ -135,6 +135,12 @@
   (setq org-download-abbreviate-filename-function 'abbreviate-file-name)
   )
 
+;; 段落边界
+(defun use-default-paragraph-delimiters ()
+  (setq paragraph-start (default-value 'paragraph-start)
+        paragraph-separate (default-value 'paragraph-separate)))
+(add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
+
 ;; org roam高级接口
 (use-package consult-org-roam
   :ensure t)
