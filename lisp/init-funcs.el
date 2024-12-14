@@ -109,7 +109,7 @@
 (defun open-work-summary-org()
   "打开work-summary.org文件"
   (interactive)
-  (find-file "~/org/note/work-summary.org"))
+  (find-file "~/org/note/work_summary.org"))
 
 (defun refresh-package-archive-contents()
   "重新刷新package-archive-contents"
