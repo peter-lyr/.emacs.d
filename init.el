@@ -180,6 +180,8 @@
 (evil-leader/set-key "fy" 'copy-buffer-file-name)
 ;; 在nvim-qt打开当前文件
 (evil-leader/set-key "o" 'open-in-nvim-qt)
+;; cmdline
+(evil-leader/set-key ";" 'evil-ex)
 ;; avy
 (evil-leader/set-key "s" 'avy-goto-char)
 ;; (evil-define-key 'normal org-mode-map (kbd "s") 'avy-goto-char)
