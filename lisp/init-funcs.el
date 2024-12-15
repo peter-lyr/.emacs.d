@@ -106,10 +106,15 @@
   (interactive)
   (find-file "~/org/note/work.org"))
 
-(defun open-work-summary-org()
-  "打开work-summary.org文件"
+(defun open-work-summary-week-org()
+  "打开work-summary-week.org文件"
   (interactive)
-  (find-file "~/org/note/work_summary.org"))
+  (find-file "~/org/note/work_summary_week.org"))
+
+(defun open-work-summary-day-org()
+  "打开work-summary-day.org文件"
+  (interactive)
+  (find-file "~/org/note/work_summary_day.org"))
 
 (defun refresh-package-archive-contents()
   "重新刷新package-archive-contents"
