@@ -193,7 +193,7 @@
 ;; 打开org文件
 (evil-leader/set-key "fi" 'open-init-org)
 (evil-leader/set-key "fw" 'open-work-org)
-(evil-leader/set-key "fe" 'open-work-summary-week-org)
+(evil-leader/set-key "fk" 'open-work-summary-week-org)
 (evil-leader/set-key "fa" 'open-work-summary-day-org)
 ;; org journal
 (evil-leader/set-key "n j SPC" 'org-roam-dailies-goto-today)
